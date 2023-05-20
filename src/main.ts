@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import './style.scss';
 import App from './App.vue';
-import { useLitUI } from '../dist/lit/vue';
+import { useLitForVue } from '@local/lit';
 
 createApp(App)
-  .use(useLitUI)
+  .use(useLitForVue)
   .mount('#app');
