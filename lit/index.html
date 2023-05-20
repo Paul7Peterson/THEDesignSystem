@@ -11,8 +11,17 @@
     <title>Vite + Vue + TS</title>
   </head>
   <body>
-    <h2>Vue:</h2>
-    <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+
+    <h2>Web components:</h2>
+    <z-button text="ZButton"></z-button>
+    <z-text-input text="My text" id="input"/>
+
+    <script>
+      const input = document.getElementById('input')
+      input.addEventListener('change:text', (e) => {
+        console.log(e);
+      })
+    </script>
   </body>
 </html>

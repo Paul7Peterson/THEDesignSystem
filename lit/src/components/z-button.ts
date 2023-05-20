@@ -1,7 +1,7 @@
 import { LitElement, unsafeCSS, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import CSS from './z-button.css?inline';
+import SCSS from './z-button.scss?inline';
 
 export interface ZButtonProps {
   /** */
@@ -18,7 +18,7 @@ export class ZButton extends LitElement {
     return html`<button class="base-btn">${this.text}</button>`;
   }
 
-  static styles = unsafeCSS(CSS);
+  static styles = unsafeCSS(SCSS);
 }
 
 declare global {

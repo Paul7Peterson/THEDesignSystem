@@ -1,6 +1,8 @@
-import { LitElement, css, html } from 'lit';
+import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { emitEvent } from '../utils';
+
+import SCSS from './z-text-input.scss?inline';
 
 export interface ZTextInputProps {
   /** Text model */
@@ -27,11 +29,7 @@ export class ZTextInput extends LitElement {
     `;
   }
 
-  static styles = css`
-    input {
-      color: var(--text-color, yellow);
-    }
-  `;
+  static styles = unsafeCSS(SCSS);
 }
 
 declare global {

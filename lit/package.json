@@ -31,7 +31,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "docker": "docker build . -t vue-lit -f ./Dockerfile",
     "preview": "vite preview"
   },
   "dependencies": {

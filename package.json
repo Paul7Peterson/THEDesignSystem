@@ -6,6 +6,7 @@
   "ui-library": "./ui-library",
   "scripts": {
     "dev": "vite",
+    "dev:lit": "cd ./lit && npm run dev",
     "build": "vue-tsc --noEmit && vite build",
     "build:raw": "npm run build:lit && vite build",
     "build:lit": "cd ./lit && npm run build",
