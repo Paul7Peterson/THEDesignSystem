@@ -3,7 +3,6 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import typescript2 from 'rollup-plugin-typescript2';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,25 +10,13 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    typescript2({
-      check: false,
-      include: ['src/elements/**/*.vue'],
-      tsconfigOverride: {
-        compilerOptions: {
-          outDir: 'dist',
-          sourceMap: true,
-          declaration: true,
-          declarationMap: true,
-        },
-      },
-      exclude: ['vite.config.ts'],
-    }),
   ],
   build: {
-    // minify: false,
+    minify: true,
+    cssMinify: true,
     emptyOutDir: true,
-    // sourcemap: true,
-    // cssCodeSplit: true,
+    sourcemap: true,
+    cssCodeSplit: true,
     outDir: path.resolve(__dirname, 'dist'),
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -39,12 +26,16 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
+        /^lit/,
         'vue',
       ],
       input: {
         main: path.resolve(__dirname, 'src/index.ts'),
       },
       output: {
+        // manualChunks: {
+        //   vendor: ['vue'],
+        // },
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'main.css') return 'styles.css';
           return assetInfo.name || '';
