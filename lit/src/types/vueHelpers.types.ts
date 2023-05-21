@@ -1,16 +1,6 @@
-import type {
-  DefineComponent,
-  PropType as __PropType,
-  ComponentOptionsMixin,
-  VNodeProps,
-  AllowedComponentProps,
-  ComponentCustomProps,
-  ExtractPropTypes,
-} from 'vue';
-
 type PropTypeDict<T extends {}> = {
   [K in keyof T]: {
-    type: __PropType<NonNullable<T[K]>>;
+    type: import('vue').PropType<NonNullable<T[K]>>;
     required: undefined extends T ? false : true;
   }
 };
@@ -30,17 +20,20 @@ type TransformEmits<T extends {}> = {
 };
 
 /** */
-export type VueLitComponent<Props extends {} = {}, Emits extends {} = {}> = DefineComponent<
+export type VueLitComponent<
+  Props extends {} = {},
+  Emits extends {} = {}
+> = import('vue').DefineComponent<
   PropTypeDict<Props>,
   {},
   unknown,
   {},
   {},
-  ComponentOptionsMixin,
-  ComponentOptionsMixin,
+  import('vue').ComponentOptionsMixin,
+  import('vue').ComponentOptionsMixin,
   AssertStringKeys<Emits>[],
   AssertStringKeys<Emits>,
-  VNodeProps & AllowedComponentProps & ComponentCustomProps,
-  Readonly<ExtractPropTypes<PropTypeDict<Props>>> & TransformEmits<Emits>,
+  import('vue').VNodeProps & import('vue').AllowedComponentProps & import('vue').ComponentCustomProps,
+  Readonly<import('vue').ExtractPropTypes<PropTypeDict<Props>>> & TransformEmits<Emits>,
   {}
 >;

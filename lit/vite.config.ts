@@ -38,7 +38,9 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [],
+      external: [
+        'vue',
+      ],
       input: {
         main: path.resolve(__dirname, 'src/index.ts'),
       },

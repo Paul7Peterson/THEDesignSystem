@@ -1,7 +1,9 @@
-import { App } from 'vue';
+// import type { App } from 'vue';
 
-import { litModelDirective } from './model';
+import { litModelDirective, litEventDirective } from './model';
 
-export function userLitDirectives (app: App<Element>) {
+/** */
+export function userLitDirectives (app: import('vue').App<Element>) {
   app.directive('lit-model', litModelDirective);
+  app.directive('lit-event', litEventDirective);
 }

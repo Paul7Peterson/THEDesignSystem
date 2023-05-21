@@ -1,10 +1,11 @@
-import type { Plugin } from 'vue';
 import './types/vue.types';
 import { userLitDirectives } from './directives';
 
-export const useLitForVue: Plugin = {
+/** ## `useLitForVue()`
+ * 
+ */
+export const useLitForVue: import('vue').Plugin = {
   install: (app) => {
-    // Plugin code goes here
     userLitDirectives(app);
   },
 };

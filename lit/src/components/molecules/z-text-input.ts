@@ -1,6 +1,6 @@
 import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { emitEvent } from '../utils';
+import { emitEvent } from '../../utils';
 
 import SCSS from './z-text-input.scss?inline';
 
@@ -24,7 +24,7 @@ export class ZTextInput extends LitElement {
       <input 
         type="text" 
         .value=${this.text}
-        @input=${(e: Event) => emitEvent(this, e)} 
+        @input=${(e: Event) => emitEvent(this, e, 'text')} 
       />
     `;
   }
