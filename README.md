@@ -1,3 +1,3 @@
-# Vue + Vite + Lit + Figma
+# Vite + Lit + Figma for Vue and React
 
 ...
