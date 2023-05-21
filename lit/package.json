@@ -1,0 +1,48 @@
+{
+  "name": "vue-lit",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Design system package.",
+  "author": {
+    "name": "Pablo Pérez Chueca"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/styles.css",
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "directories": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^2.7.4"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.21.5",
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^20.2.1",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vite-plugin-dts": "^2.0.1",
+    "vitest": "^0.31.1",
+    "vue": "^3.2.47"
+  }
+}

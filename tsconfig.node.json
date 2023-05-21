@@ -8,6 +8,5 @@
   },
   "include": [
     "vite.config.ts",
-    "dist/lit/compiler.ts"
   ]
 }

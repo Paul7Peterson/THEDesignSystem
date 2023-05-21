@@ -3,14 +3,16 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { ignoreCustomTags } from './dist/lit/compiler';
+// import { ignoreCustomTags } from '@local/lit';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
       template: {
-        compilerOptions: ignoreCustomTags(),
+        compilerOptions: {
+          isCustomElement: (tag: string) => tag.endsWith('-lit') || tag.startsWith('z-'),
+        },
       },
     }),
   ],

@@ -6,17 +6,18 @@
   "ui-library": "./ui-library",
   "scripts": {
     "dev": "vite",
+    "dev:lit": "cd ./lit && npm run dev",
     "build": "vue-tsc --noEmit && vite build",
     "build:raw": "npm run build:lit && vite build",
-    "build:lit": "tsc --project tsconfig.lit.json",
+    "build:lit": "cd ./lit && npm run build",
     "docker": "docker build . -t vue-lit -f ./Dockerfile",
     "preview": "vite preview"
   },
   "dependencies": {
-    "lit": "^2.7.4",
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@local/lit": "file:./lit",
     "@babel/types": "^7.21.5",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/jsdom": "^21.1.1",
