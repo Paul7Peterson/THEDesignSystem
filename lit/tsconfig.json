@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "module": "ESNext",
     "lib": [
@@ -8,33 +9,23 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "declaration": true,
-    // "skipLibCheck": true,
-    // /* Bundler mode */
-    // "allowImportingTsExtensions": true,
-    // "resolveJsonModule": true,
-    // "isolatedModules": true,
-    // "noEmit": true,
-    // "jsx": "preserve",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
-    "composite": true,
     "types": [
       "./declaration.d.ts"
     ]
   },
   "include": [
     "src"
-  ],
-  "exclude": [
-    "dist",
   ]
 }

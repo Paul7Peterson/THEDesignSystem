@@ -34,7 +34,7 @@ const COMPONENTS = {
 function chuckParser (): Record<string, string> {
   return Object.entries(COMPONENTS).reduce((t, [cat, elements]) => {
     elements.forEach((element) => {
-      t[`components/${element}`] = path.resolve(__dirname, `src/components/${cat}/z-${element}.ts`);
+      t[element] = path.resolve(__dirname, `src/components/${cat}/z-${element}.ts`);
     });
     return t;
   }, {} as Record<string, string>);

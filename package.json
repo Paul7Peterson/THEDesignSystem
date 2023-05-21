@@ -12,12 +12,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
     "@types/node": "^20.2.1",
-    "@vue/eslint-config-typescript": "^11.0.2",
-    "eslint": "^8.35.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-vue": "^9.9.0",
     "typescript": "^5.0.2"
   }
 }
