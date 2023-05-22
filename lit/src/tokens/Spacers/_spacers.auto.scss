@@ -1,0 +1,84 @@
+@use "sass:map";
+
+// $root-sizes: (
+//   'small': 12px,
+//   'medium': 14px,
+//   'big': 16px,
+// );
+
+$gutters: (
+  '3xs': 0.125,
+  '2xs': 0.25,
+  'xs': 0.5,
+  's': 0.75,
+  'm': 1,
+  'l': 1.5,
+  'xl': 2.25,
+  '2xl': 3,
+  '3xl': 4.5,
+  '4xl': 6,
+  '5xl': 9,
+);
+
+// @function getRoot($name) {
+//   @return map.get($root-sizes, $name);
+// };
+
+@function getGutter($name) {
+  @return map.get($gutters, $name);
+}
+
+// :export {
+// rootSize_small: getRoot('small');
+// rootSize_medium: getRoot('medium');
+// rootSize_big: getRoot('big');
+
+// gutter_3xs: getGutter('3xs');
+// gutter_2xs: getGutter('2xs');
+// gutter_xs: getGutter('xs');
+// gutter_s: getGutter('s');
+// gutter_m: getGutter('m');
+// gutter_l: getGutter('l');
+// gutter_xl: getGutter('xl');
+// gutter_2xl: getGutter('2xl');
+// gutter_3xl: getGutter('3xl');
+// gutter_4xl: getGutter('4xl');
+// gutter_5xl: getGutter('5xl');
+
+// gutter_small_3xs: calc(getRoot('small') * getGutter('3xs'));
+// gutter_small_2xs: calc(getRoot('small') * getGutter('2xs'));
+// gutter_small_xs: calc(getRoot('small') * getGutter('xs'));
+// gutter_small_s: calc(getRoot('small') * getGutter('s'));
+// gutter_small_m: calc(getRoot('small') * getGutter('m'));
+// gutter_small_l: calc(getRoot('small') * getGutter('l'));
+// gutter_small_xl: calc(getRoot('small') * getGutter('xl'));
+// gutter_small_2xl: calc(getRoot('small') * getGutter('2xl'));
+// gutter_small_3xl: calc(getRoot('small') * getGutter('3xl'));
+// gutter_small_4xl: calc(getRoot('small') * getGutter('4xl'));
+// gutter_small_5xl: calc(getRoot('small') * getGutter('5xl'));
+
+// gutter_medium_3xs: calc(getRoot('medium') * getGutter('3xs'));
+// gutter_medium_2xs: calc(getRoot('medium') * getGutter('2xs'));
+// gutter_medium_xs: calc(getRoot('medium') * getGutter('xs'));
+// gutter_medium_s: calc(getRoot('medium') * getGutter('s'));
+// gutter_medium_m: calc(getRoot('medium') * getGutter('m'));
+// gutter_medium_l: calc(getRoot('medium') * getGutter('l'));
+// gutter_medium_xl: calc(getRoot('medium') * getGutter('xl'));
+// gutter_medium_2xl: calc(getRoot('medium') * getGutter('2xl'));
+// gutter_medium_3xl: calc(getRoot('medium') * getGutter('3xl'));
+// gutter_medium_4xl: calc(getRoot('medium') * getGutter('4xl'));
+// gutter_medium_5xl: calc(getRoot('medium') * getGutter('5xl'));
+
+// gutter_big_3xs: calc(getRoot('big') * getGutter('3xs'));
+// gutter_big_2xs: calc(getRoot('big') * getGutter('2xs'));
+// gutter_big_xs: calc(getRoot('big') * getGutter('xs'));
+// gutter_big_s: calc(getRoot('big') * getGutter('s'));
+// gutter_big_m: calc(getRoot('big') * getGutter('m'));
+// gutter_big_l: calc(getRoot('big') * getGutter('l'));
+// gutter_big_xl: calc(getRoot('big') * getGutter('xl'));
+// gutter_big_2xl: calc(getRoot('big') * getGutter('2xl'));
+// gutter_big_3xl: calc(getRoot('big') * getGutter('3xl'));
+// gutter_big_4xl: calc(getRoot('big') * getGutter('4xl'));
+// gutter_big_5xl: calc(getRoot('big') * getGutter('5xl'));
+
+// }

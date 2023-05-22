@@ -76,9 +76,12 @@ export default defineConfig({
         // manualChunks: {
         //   vendor: ['vue'],
         // },
-        assetFileNames: (assetInfo) => {
+        assetFileNames (assetInfo) {
           if (assetInfo.name === 'main.css') return 'styles.css';
           return assetInfo.name || '';
+        },
+        chunkFileNames (fileInfo) {
+          return fileInfo.name || '';
         },
         exports: 'auto',
         // Provide global variables to use in the UMD build

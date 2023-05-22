@@ -1,0 +1,23 @@
+@use './_spacers.auto.scss' as *;
+
+:root {
+  // The CSS variables for the root sizes
+  // @each $size, $value in $root-sizes {
+  //   --root-size-#{$size}: #{$value};
+  // }
+
+  // The CSS variables for the gutters
+  @each $size,
+  $value in $gutters {
+    --gutter-#{$size}: #{$value}rem;
+  }
+
+  --gutter-0: 0;
+
+  // The CSS variables for the sized gutters
+  // @each $size, $sizeValue in $root-sizes {
+  //   @each $gutter, $gutterValue in $gutters {
+  //     --gutter-#{$size}-#{$gutter}: #{$sizeValue * $gutterValue};
+  //   }
+  // }
+}

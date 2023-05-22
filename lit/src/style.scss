@@ -26,10 +26,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: grid;
   min-width: 320px;
-  min-height: 100vh;
+  max-width: 1200px;
+  margin-inline: auto;
+  gap: var(--gutter-xs);
 }
 
 @media (prefers-color-scheme: light) {

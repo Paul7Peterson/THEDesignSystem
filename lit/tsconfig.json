@@ -23,7 +23,12 @@
     "noFallthroughCasesInSwitch": true,
     "types": [
       "./declaration.d.ts"
-    ]
+    ],
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
   },
   "include": [
     "src"
