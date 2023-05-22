@@ -112,6 +112,7 @@ export default defineConfig({
   test: {
     globals: true,
     watch: false,
+    environment: 'jsdom',
     reporters: [
       'verbose',
       'junit',

@@ -22,7 +22,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "types": [
-      "./declaration.d.ts"
+      "./declaration.d.ts",
+      "node",
+      "jsdom",
+      "vitest/globals"
     ],
     "paths": {
       "~/*": [

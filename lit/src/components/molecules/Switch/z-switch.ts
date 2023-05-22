@@ -23,7 +23,7 @@ export class ZSwitch extends LitElement {
 
   render () {
     return html`
-      <div class=z-switch>
+      <div class="z-switch">
         <div class="z-switch__input">
           <input
             .id="${this.id}"

@@ -9,6 +9,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:raw": "npm run build:lit && vite build",
     "docker": "docker build . -t vue-lit -f ./Dockerfile",
+    "test": "vitest src",
     "preview": "vite preview"
   },
   "dependencies": {
