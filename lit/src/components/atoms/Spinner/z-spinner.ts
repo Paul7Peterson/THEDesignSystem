@@ -14,7 +14,7 @@ export interface ZSpinnerProps {
 export class ZSpinner extends LitElement {
 
   render () {
-    return html``;
+    return html`<div class="z-spinner" />`;
   }
 
   static styles = unsafeCSS(SCSS);

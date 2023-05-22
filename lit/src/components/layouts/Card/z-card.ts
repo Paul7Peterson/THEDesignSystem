@@ -14,7 +14,13 @@ export interface ZCardProps {
 export class ZCard extends LitElement {
 
   render () {
-    return html``;
+    return html`
+    <article
+      class="z-card"
+    >
+      <slot name="default" />
+    </article>
+    `;
   }
 
   static styles = unsafeCSS(SCSS);

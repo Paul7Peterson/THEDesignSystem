@@ -1,0 +1,104 @@
+$size: var(--gutter-l);
+$slider-gap: .2rem;
+$active-color: var(--brand-orange);
+$inactive-color: var(--grey-80);
+$transition: .2s;
+
+$slider-size: calc($size - ($slider-gap * 2));
+
+.z-switch {
+  align-items: center;
+
+  >span {
+    min-width: 6rem;
+  }
+
+  &__input {
+    position: relative;
+    display: inline-block;
+    width: calc($size * 2);
+    height: $size;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $inactive-color;
+    -webkit-transition:
+      box-shadow $transition,
+      background-color $transition;
+    transition:
+      box-shadow $transition,
+      background-color $transition;
+    border-radius: $size;
+    box-shadow: var(--die-cut-2);
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: $slider-size;
+      width: $slider-size;
+      left: $slider-gap;
+      bottom: $slider-gap;
+      background-color: var(--grey-100);
+      -webkit-transition:
+        box-shadow $transition,
+        background-color $transition,
+        transform $transition;
+      transition:
+        box-shadow $transition,
+        background-color $transition,
+        transform $transition;
+      border-radius: 50%;
+      box-shadow: var(--elevation-2);
+    }
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.z-switch__slider {
+      background-color: $active-color;
+
+      &:before {
+        -webkit-transform: translateX($size);
+        -ms-transform: translateX($size);
+        transform: translateX($size);
+      }
+    }
+
+    &:focus+.z-switch__slider {
+      box-shadow: var(--die-cut-4);
+      outline: 1px solid var(--color-azure-65);
+      outline-offset: .1rem;
+
+      &::before {
+        box-shadow: var(--elevation-4);
+      }
+    }
+
+    &:disabled,
+    &[disabled],
+    &[disabled="true"] {
+      +.z-switch__slider {
+        box-shadow: none;
+        background-color: $inactive-color;
+
+        &:before {
+          box-shadow: none;
+        }
+      }
+
+      &:checked+.z-switch__slider {
+        background-color: var(--grey-35);
+      }
+    }
+  }
+}

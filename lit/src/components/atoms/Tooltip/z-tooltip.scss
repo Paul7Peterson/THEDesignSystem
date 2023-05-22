@@ -1,0 +1,56 @@
+@mixin tooltip {
+  position: absolute;
+  background-color: var(--grey-5);
+  color: var(--grey-95);
+  font-size: 11px;
+  padding: 0 var(--gutter-xs);
+  z-index: 9999;
+  font-family: 'Roboto';
+}
+
+
+.z-tooltip {
+  position: relative;
+  cursor: default;
+
+  &__text {
+    @include tooltip();
+    bottom: 100%;
+    margin-bottom: 0;
+    left: 0;
+    display: inline-block;
+    visibility: hidden;
+
+    &.no-select {
+      user-select: none;
+    }
+
+    a {
+      color: var(--orange)
+    }
+
+    &:hover {
+      visibility: visible;
+    }
+  }
+
+  &:hover .tooltip__text {
+    visibility: visible;
+  }
+}
+
+*[tooltip] {
+  position: relative;
+  display: inline-block;
+  margin-top: 1.5em;
+  cursor: default;
+
+  &:hover:after {
+    @include tooltip();
+    content: attr(tooltip);
+    left: 0;
+    width: max-content;
+    font-weight: 400;
+    bottom: calc(100%);
+  }
+}
