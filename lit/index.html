@@ -15,87 +15,99 @@
   <body>
     <script type="module" src="/src/components/index.ts"></script>
 
-    <h2>Web components:</h2>
-
-    <h4>Atoms:</h4>
-
-    <div>
-      <z-date text="05/05/2023"/>
-    </div>
-
-    <div>
-      <z-icon/>
-    </div>
-
-    <div>
-      <z-image/>
-    </div>
-
-    <div>
-      <z-number/>
-    </div>
-
-    <div>
-      <z-spinner/>
-    </div>
-
-    <div>
-      <z-tooltip/>
-    </div>
+    <main>
+      <h2>Web components:</h2>
+  
+      <section>
+        <h4>Atoms:</h4>
     
-    <h4>Layouts:</h4>
-
-    <div>
-      <z-card/>
-    </div>
-
-    <div>
-      <z-modal/>
-    </div>
-
-    <h4>Molecules:</h4>
-
-    <div>
-      <z-button text="ZButton"/>
-    </div>
-
-    <div>
-      <z-checkbox/>
-    </div>
+        <div>
+          <z-date text="05/05/2023"/>
+        </div>
     
-    <div>
-      <z-chip/>
-    </div>
+        <div>
+          <z-icon/>
+        </div>
+    
+        <div>
+          <z-image/>
+        </div>
+    
+        <div>
+          <z-number/>
+        </div>
+    
+        <div>
+          <z-spinner/>
+        </div>
+    
+        <div>
+          <z-tooltip/>
+        </div>
+      </section>
+  
+      <section>
+        <h4>Layouts:</h4>
+    
+        <div>
+          <z-card/>
+        </div>
+    
+        <div>
+          <z-modal/>
+        </div>
+      </section>
+      
+      <section>
+        <h4>Molecules:</h4>
+    
+        <div>
+          <z-button text="ZButton"/>
+        </div>
+    
+        <div>
+          <z-checkbox/>
+        </div>
+        
+        <div>
+          <z-chip/>
+        </div>
+    
+        <div>
+          <z-label/>
+        </div>
+    
+        <div>
+          <z-number-input number="0"/>
+        </div>
+    
+        <div>
+          <z-output/>
+        </div>
+    
+        <div>
+          <z-select/>
+        </div>
+    
+        <div>
+          <z-switch/>
+        </div>
+    
+        <div>
+          <z-text-input text="My text" id="input"/>
+        </div>
+      </section>
+  
+      <section>
+        <h4>Organisms:</h4>
+  
+      </section>
 
-    <div>
-      <z-label/>
-    </div>
-
-    <div>
-      <z-number-input number="0"/>
-    </div>
-
-    <div>
-      <z-output/>
-    </div>
-
-    <div>
-      <z-select/>
-    </div>
-
-    <div>
-      <z-switch/>
-    </div>
-
-    <div>
-      <z-text-input text="My text" id="input"/>
-    </div>
-
-    <h4>Organisms:</h4>
+    </main>
 
     <script>
       const input = document.getElementById('input')
-      input.addEventListener('change:text', (e) => {
+      input?.addEventListener('change:text', (e) => {
         console.log(e);
       })
     </script>

@@ -19,7 +19,7 @@ export interface ZDateProps {
 export class ZDate extends LitElement implements ZDateProps {
 
   @property()
-  date!: Date;
+  date: Date = new Date();
   @property()
   locale: Required<ZDateProps['locale']> = 'en';
   @property()

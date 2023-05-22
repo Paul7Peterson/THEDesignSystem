@@ -4,6 +4,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-switch.scss?inline';
+import { emitEvent } from '~/utils';
 
 export interface ZSwitchProps {
   /** */
@@ -22,13 +23,16 @@ export class ZSwitch extends LitElement {
 
   render () {
     return html`
-      <div class="z-switch__input">
-        <input
-          .id="${this.id}"
-          type="checkbox"
-          ?disabled="${this.disable}"
-        >
-        <span class="z-switch__slider" />
+      <div class=z-switch>
+        <div class="z-switch__input">
+          <input
+            .id="${this.id}"
+            type="checkbox"
+            ?disabled="${this.disable}"
+            @input=${(e: Event) => emitEvent(this, e, 'value')} 
+          >
+          <span class="z-switch__slider" />
+        </div>
       </div>
     `;
   }

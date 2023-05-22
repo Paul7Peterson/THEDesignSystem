@@ -25,12 +25,20 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: grid;
-  min-width: 320px;
-  max-width: 1200px;
-  margin-inline: auto;
-  gap: var(--gutter-xs);
+  margin: 0 var(--gutter-l);
+
+  main {
+    display: grid;
+    min-width: 320px;
+    max-width: 1200px;
+    margin-inline: auto;
+    gap: var(--gutter-xs);
+  }
+
+  section {
+    display: grid;
+    gap: var(--gutter-xs);
+  }
 }
 
 @media (prefers-color-scheme: light) {

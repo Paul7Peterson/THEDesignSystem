@@ -43,13 +43,13 @@ export class ZImage extends LitElement implements ZImageProps {
         ${this.sources.map((source) => `
           <source
             media="(min-width:${source.minWidth}px)"
-            srcset="${source.src}"
+            .srcset="${source.src}"
           >
         `)}
         <img
-          src="${this.src}"
-          alt="${this.alt}"
-          onerror="this.onerror=null; this.src='${FALLBACK_IMG}"
+          .src="${this.src}"
+          .alt="${this.alt}"
+          onerror="this.onerror=null; this.src='${FALLBACK_IMG}'"
           style="aspect-ratio:${this.ratio};"
           loading="lazy"
         >
