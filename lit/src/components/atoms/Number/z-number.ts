@@ -28,7 +28,7 @@ export class ZNumber extends LitElement implements ZNumberProps {
     return html`
     <data
       class="z-number"
-      value="${this.value}"
+      .value="${this.value}"
     >
       ${this.parsedValue}
     </data>`;

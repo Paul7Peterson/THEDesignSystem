@@ -33,7 +33,7 @@ export class ZDate extends LitElement implements ZDateProps {
     return html`
       <time 
         class="z-date"
-        datetime="${this.date.toISOString()}"
+        .datetime="${this.date.toISOString()}"
       >
         ${this.stamp}
       </time>`;

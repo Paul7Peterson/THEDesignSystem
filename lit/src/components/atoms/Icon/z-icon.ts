@@ -14,7 +14,7 @@ export interface ZIconProps {
 export class ZIcon extends LitElement {
 
   render () {
-    return html``;
+    return html`<i class="z-icon"/>`;
   }
 
   static styles = unsafeCSS(SCSS);

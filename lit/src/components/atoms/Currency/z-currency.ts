@@ -35,8 +35,8 @@ export class ZCurrency extends LitElement implements ZCurrencyProps {
     return html`
     <data
       class="z-currency"
-      value="${this.value}"
-      content="${this.value}"
+      .value="${this.value}"
+      .content="${this.value}"
       itemprop="price"
     >
       ${this.parsedValue}
@@ -44,7 +44,7 @@ export class ZCurrency extends LitElement implements ZCurrencyProps {
 
     <meta
       itemprop="priceCurrency"
-      content="${this.currency}"
+      .content="${this.currency}"
     >
     `;
   }

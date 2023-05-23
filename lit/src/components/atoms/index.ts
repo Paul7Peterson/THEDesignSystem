@@ -1,5 +1,6 @@
 export * from './Currency/z-currency';
 export * from './Date/z-date';
+export * from './Heading/z-heading';
 export * from './Icon/z-icon';
 export * from './Image/z-image';
 export * from './Number/z-number';
