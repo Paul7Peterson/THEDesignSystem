@@ -18,7 +18,7 @@ export interface ZCurrencyProps {
 export class ZCurrency extends LitElement implements ZCurrencyProps {
 
   @property()
-  value!: number;
+  value: number = 0;
   @property()
   currency: Required<ZCurrencyProps['currency']> = 'EUR';
   @property()
