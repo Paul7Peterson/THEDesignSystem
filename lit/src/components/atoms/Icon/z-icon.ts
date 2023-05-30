@@ -25,7 +25,6 @@ export class ZIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    /** ... */
     'z-icon': ZIcon;
   }
 }

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://unpkg.com/vscode-html-languageservice@4.2.0/docs/customData.schema.json",
+  "version": 1.1,
+  "globalAttributes": [],
+  "valueSets": [],
+  "tags": [
+    {
+      "name": "z-icon",
+      "description": "My icon",
+      "references": [
+        {
+          "name": "WebComponents.org",
+          "url": "https://www.webcomponents.org"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "The icon name  \n![](https://cdn-icons-png.flaticon.com/512/2815/2815428.png)",
+          "values": [
+            {
+              "name": "cross",
+              "description": "A cross ❌"
+            },
+            {
+              "name": "square",
+              "description": "A square 🟥"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

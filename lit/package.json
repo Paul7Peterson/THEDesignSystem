@@ -25,6 +25,18 @@
       "require": "./dist/style.css"
     }
   },
+  "contributes": {
+    "html": {
+      "customData": [
+        "./web-components.html-data.json"
+      ]
+    },
+    "css": {
+      "customData": [
+        "./web-components.css-data.json"
+      ]
+    }
+  },
   "directories": {},
   "scripts": {
     "dev": "vite",
