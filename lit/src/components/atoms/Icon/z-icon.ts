@@ -1,7 +1,7 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-icon.scss?inline';
 
@@ -9,9 +9,12 @@ export interface ZIconProps {
 
 }
 
-/** */
+/** ... */
 @customElement('z-icon')
 export class ZIcon extends LitElement {
+  /** Icon */
+  @property()
+  icon!: string;
 
   render () {
     return html`<i class="z-icon"/>`;
@@ -22,6 +25,7 @@ export class ZIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
+    /** ... */
     'z-icon': ZIcon;
   }
 }
