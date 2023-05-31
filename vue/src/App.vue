@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import type { } from '@local/lit';
   import { ref } from 'vue';
 
   const hasLogo = ref(true);
@@ -18,7 +17,7 @@
 
   <hr>
 
-  <z-icon />
+  <z-icon icon="cross" />
 
   <test-lit
     :has-logo="hasLogo"

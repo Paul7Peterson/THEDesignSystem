@@ -6,7 +6,8 @@ import { customElement, property } from 'lit/decorators.js';
 import SCSS from './z-icon.scss?inline';
 
 export interface ZIconProps {
-
+  /** */
+  icon: 'cross' | 'square';
 }
 
 /** ... */
@@ -17,7 +18,7 @@ export class ZIcon extends LitElement {
   icon!: string;
 
   render () {
-    return html`<i class="z-icon"/>`;
+    return html`<i class="z-icon">${this.icon}</i>`;
   }
 
   static styles = unsafeCSS(SCSS);

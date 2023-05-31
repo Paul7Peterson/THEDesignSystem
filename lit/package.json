@@ -14,14 +14,21 @@
   "types": "./dist/index.d.ts",
   "style": "./dist-styles/index.css",
   "files": [
-    "dist/*"
+    "dist/*",
+    "dist-styles/*"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.es.js"
     },
+    "./index": {
+      "import": "./dist/index.es.js"
+    },
     "./vue": {
       "import": "./dist/vue.es.js"
+    },
+    "./vite": {
+      "import": "./dist/vite.es.js"
     },
     "./style.css": {
       "import": "./dist-styles/index.css",
@@ -30,8 +37,14 @@
   },
   "typesVersions": {
     "*": {
+      "index": [
+        "./dist/index.d.ts"
+      ],
       "vue": [
         "./dist/vue.d.ts"
+      ],
+      "vite": [
+        "./dist/vite.d.ts"
       ]
     }
   },

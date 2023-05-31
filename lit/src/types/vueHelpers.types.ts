@@ -1,9 +1,13 @@
-type PropTypeDict<T extends {}> = {
-  [K in keyof T]: {
-    type: import('vue').PropType<NonNullable<T[K]>>;
-    required: undefined extends T ? false : true;
+type PropTypeDict<T extends {}> = Required<{
+  [K in keyof T]: undefined extends T[K]
+  ? {
+    type: import('vue').PropType<T[K]>;
   }
-};
+  : {
+    type: import('vue').PropType<T[K]>;
+    required: true;
+  }
+}>;
 
 type AssertStringKeys<T extends {}> = keyof T extends string ? keyof T : never;
 

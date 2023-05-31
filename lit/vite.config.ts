@@ -33,7 +33,6 @@ export default defineConfig({
       ],
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
-        // types: path.resolve(__dirname, 'src/index.types.ts'),
         vue: path.resolve(__dirname, 'src/vue.ts'),
         vite: path.resolve(__dirname, 'src/vite.ts'),
         'components/test-lit': path.resolve(__dirname, 'src/components/test-lit.ts'),
