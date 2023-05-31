@@ -6,7 +6,7 @@
   "tags": [
     {
       "name": "z-icon",
-      "description": "My icon",
+      "description": "### `<z-icon />`  \nMy icon component",
       "references": [
         {
           "name": "WebComponents.org",

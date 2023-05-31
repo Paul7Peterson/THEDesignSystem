@@ -12,7 +12,7 @@
   },
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "style": "./dist/styles.css",
+  "style": "./dist-styles/index.css",
   "files": [
     "dist/*"
   ],
@@ -20,9 +20,19 @@
     ".": {
       "import": "./dist/index.es.js"
     },
+    "./vue": {
+      "import": "./dist/vue.es.js"
+    },
     "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+      "import": "./dist-styles/index.css",
+      "require": "./dist-styles/index.css"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "vue": [
+        "./dist/vue.d.ts"
+      ]
     }
   },
   "contributes": {
@@ -40,8 +50,9 @@
   "directories": {},
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "build:storybook": "build-storybook",
+    "build": "npm run build:ts && npm run build:styles",
+    "build:ts": "tsc && vite build",
+    "build:styles": "sass src/tokens/index.scss dist-styles/index.css",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "test": "vitest src"

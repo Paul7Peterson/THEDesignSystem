@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import type { } from '@local/lit';
   import { ref } from 'vue';
 
   const hasLogo = ref(true);
@@ -16,6 +17,8 @@
   <input v-model="text">
 
   <hr>
+
+  <z-icon />
 
   <test-lit
     :has-logo="hasLogo"

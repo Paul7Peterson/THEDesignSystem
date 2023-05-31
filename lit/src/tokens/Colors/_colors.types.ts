@@ -1,7 +1,7 @@
-import type { IColorStyle } from '../../../figma/Style';
+// import type { IColorStyle } from '../../../figma/Style';
 
 export interface ColorValue {
-  readonly color: IColorStyle['color'];
+  readonly color: string;//IColorStyle['color'];
   readonly shade: number;
   readonly HSL: string;
   readonly HEX: string;

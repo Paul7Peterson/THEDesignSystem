@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "itemprop"
+  ],
+  "html.customData": [
+    "./lit/web-components.html-data.json",
+  ],
+  "css.customData": [
+    "./lit/web-components.css-data.json",
+  ]
+}

@@ -3,42 +3,8 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { chuckParser } from './vite.helpers';
 
-const COMPONENTS = {
-  atoms: [
-    'currency',
-    'date',
-    'image',
-    'icon',
-    'number',
-    'spinner',
-    'tooltip',
-  ],
-  layouts: [
-    'card',
-    'modal',
-  ],
-  molecules: [
-    'button',
-    'checkbox',
-    'chip',
-    'label',
-    'number-input',
-    'output',
-    'select',
-    'switch',
-    'text-input',
-  ],
-} as const;
-
-function chuckParser (): Record<string, string> {
-  return Object.entries(COMPONENTS).reduce((t, [cat, elements]) => {
-    elements.forEach((element) => {
-      t[element] = path.resolve(__dirname, `src/components/${cat}/z-${element}.ts`);
-    });
-    return t;
-  }, {} as Record<string, string>);
-}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -67,6 +33,7 @@ export default defineConfig({
       ],
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
+        // types: path.resolve(__dirname, 'src/index.types.ts'),
         vue: path.resolve(__dirname, 'src/vue.ts'),
         vite: path.resolve(__dirname, 'src/vite.ts'),
         'components/test-lit': path.resolve(__dirname, 'src/components/test-lit.ts'),
@@ -92,9 +59,6 @@ export default defineConfig({
           // 'vue-router': 'vueRouter',
         },
       },
-    },
-    commonjsOptions: {
-
     },
   },
   server: {
