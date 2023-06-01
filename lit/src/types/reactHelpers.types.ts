@@ -7,8 +7,11 @@ export type ReactCustomEvents<T extends {}> = Partial<{
 }>;
 
 /** */
-export type ReactLitComponent<T, K extends {} = {}> =
-  & T
-  & DOMAttributes<T>
+export type ReactLitComponent<
+  Props extends {} = {},
+  Emits extends {} = {},
+> =
+  & Props
+  & DOMAttributes<Props>
   & { children?: any; }
-  & ReactCustomEvents<K>;
+  & ReactCustomEvents<Emits>;

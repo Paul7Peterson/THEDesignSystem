@@ -5,30 +5,94 @@
   "valueSets": [],
   "tags": [
     {
+      "name": "z-currency",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-date",
+      "description": ""
+    },
+    {
+      "name": "z-heading",
+      "description": "",
+      "attributes": []
+    },
+    {
       "name": "z-icon",
-      "description": "### `<z-icon />`  \nMy icon component",
-      "references": [
-        {
-          "name": "WebComponents.org",
-          "url": "https://www.webcomponents.org"
-        }
-      ],
-      "attributes": [
-        {
-          "name": "icon",
-          "description": "The icon name  \n![](https://cdn-icons-png.flaticon.com/512/2815/2815428.png)",
-          "values": [
-            {
-              "name": "cross",
-              "description": "A cross ❌"
-            },
-            {
-              "name": "square",
-              "description": "A square 🟥"
-            }
-          ]
-        }
-      ]
+      "description": ""
+    },
+    {
+      "name": "z-image",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-number",
+      "description": ""
+    },
+    {
+      "name": "z-spinner",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-tooltip",
+      "description": ""
+    },
+    {
+      "name": "z-card",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-modal",
+      "description": ""
+    },
+    {
+      "name": "z-button",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-checkbox",
+      "description": ""
+    },
+    {
+      "name": "z-chip",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-label",
+      "description": ""
+    },
+    {
+      "name": "z-number-input",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-output",
+      "description": ""
+    },
+    {
+      "name": "z-select",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-switch",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "name": "z-text-input",
+      "description": ""
+    },
+    {
+      "name": "z-test-lit",
+      "description": ""
     }
   ]
 }

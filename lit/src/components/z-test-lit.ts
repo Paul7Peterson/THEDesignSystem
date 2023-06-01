@@ -1,9 +1,9 @@
 import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import SCSS from './test-lit.scss?inline';
+import SCSS from './z-test-lit.scss?inline';
 
-export interface TestLitProps {
+export interface ZTestLitProps {
   /** Text input */
   text: string;
   /** Able logo */
@@ -11,8 +11,8 @@ export interface TestLitProps {
 }
 
 /** */
-@customElement('test-lit')
-export class TestLit extends LitElement implements TestLitProps {
+@customElement('z-test-lit')
+export class ZTestLit extends LitElement implements ZTestLitProps {
   @property()
   header: string = 'Hello';
 
@@ -46,6 +46,6 @@ export class TestLit extends LitElement implements TestLitProps {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'test-lit': TestLit;
+    'z-test-lit': ZTestLit;
   }
 }

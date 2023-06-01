@@ -4,6 +4,7 @@ import { emitEvent } from '~/utils';
 
 import SCSS from './z-text-input.scss?inline';
 
+/** Test input props */
 export interface ZTextInputProps {
   /** Text model */
   text: string;

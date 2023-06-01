@@ -1,2 +1,2 @@
 import './components';
-export type { ReactComponents } from './types/react.types';
+export type { ReactComponents } from './types/react.types.auto';

@@ -1,7 +1,7 @@
 import './components';
 import { userLitDirectives } from './directives';
 
-export type { VueComponents } from './types/vue.types';
+export type { VueComponents } from './types/vue.types.auto';
 
 /** ## `useLitForVue()`
  * 

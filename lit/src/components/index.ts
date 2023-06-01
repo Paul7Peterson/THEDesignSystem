@@ -1,4 +1,4 @@
-export * from './test-lit';
+export * from './z-test-lit';
 
 export * from './atoms';
 export * from './molecules';
