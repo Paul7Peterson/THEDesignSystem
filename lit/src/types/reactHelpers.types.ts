@@ -1,13 +1,14 @@
 import type { DOMAttributes } from 'react';
+import { AssertString } from './_shared.types';
 
 /** */
-export type ReactCustomEvents<K extends string> = Partial<{
-  [key in K]: (event: CustomEvent) => void
+export type ReactCustomEvents<T extends {}> = Partial<{
+  [K in keyof T as `on${Capitalize<AssertString<K>>}`]: (event: CustomEvent) => void
 }>;
 
 /** */
-export type ReactElement<T, K extends string = ''> =
+export type ReactLitComponent<T, K extends {} = {}> =
   & T
   & DOMAttributes<T>
   & { children?: any; }
-  & ('' extends K ? {} : ReactCustomEvents<`on${K}`>);
+  & ReactCustomEvents<K>;

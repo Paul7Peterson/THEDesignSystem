@@ -1,10 +1,12 @@
-import type { ReactElement } from './reactHelpers.types';
 import type * as Z from '../components';
+import type { ReactLitComponent } from './reactHelpers.types';
 
 /** Dictionary of components with specifications for React */
 export interface ReactComponents {
-  /** ## `<z-button>` */
-  ['z-button']: ReactElement<Z.ZButtonProps>;
   /** ## `<z-icon>` */
-  ['z-icon']: ReactElement<Z.ZIconProps>;
+  'z-icon': ReactLitComponent<Z.ZIconProps>;
+  /** ## `<z-button>` */
+  'z-button': ReactLitComponent<Z.ZButtonProps>;
+  /** ## `<z-text-input>` */
+  'z-text-input': ReactLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
 }

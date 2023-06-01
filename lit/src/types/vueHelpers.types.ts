@@ -1,3 +1,5 @@
+import { AssertStringKeys } from './_shared.types';
+
 type PropTypeDict<T extends {}> = Required<{
   [K in keyof T]: undefined extends T[K]
   ? {
@@ -9,7 +11,6 @@ type PropTypeDict<T extends {}> = Required<{
   }
 }>;
 
-type AssertStringKeys<T extends {}> = keyof T extends string ? keyof T : never;
 
 type FirstLetterToUpper<T> =
   T extends `${infer First}${string}` ? Uppercase<First> : never;
