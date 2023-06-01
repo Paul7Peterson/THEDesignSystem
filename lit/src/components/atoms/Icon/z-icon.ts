@@ -6,7 +6,7 @@ import { customElement, property } from 'lit/decorators.js';
 import SCSS from './z-icon.scss?inline';
 
 export interface ZIconProps {
-  /** */
+  /** Icon value */
   icon: 'cross' | 'square';
 }
 

@@ -1,6 +1,5 @@
 {
   "private": true,
-  "type": "module",
   "ui-library": "./ui-library",
   "scripts": {
     "build:lit": "cd ./lit && npm run build",
@@ -8,11 +7,14 @@
     "build:vue": "cd ./vue && npm run build",
     "dev:lit": "cd ./lit && npm run dev",
     "dev:react": "cd ./react && npm run dev",
-    "dev:vue": "cd ./vue && npm run dev"
+    "dev:vue": "cd ./vue && npm run dev",
+    "test": "ts-node --project scripts/tsconfig.json -r tsconfig-paths/register ./scripts/test.script.ts"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^20.2.3",
-    "typescript": "^5.0.4"
+    "@types/node": "20.2.3",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^5.0.4",
+    "zx": "4.3.0"
   }
 }

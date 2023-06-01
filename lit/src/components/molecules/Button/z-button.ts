@@ -5,7 +5,7 @@ import SCSS from './z-button.scss?inline';
 import { emitEvent } from '~/utils';
 
 export interface ZButtonProps {
-  /** */
+  /** Text of the button */
   text?: string;
 }
 

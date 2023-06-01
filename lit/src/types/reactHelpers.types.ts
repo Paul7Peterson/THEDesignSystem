@@ -1,12 +1,13 @@
 import type { DOMAttributes } from 'react';
 
 /** */
-export type ReactCustomEvents<K extends string> = {
+export type ReactCustomEvents<K extends string> = Partial<{
   [key in K]: (event: CustomEvent) => void
-};
+}>;
 
 /** */
-export type ReactElement<T, K extends string> =
-  Partial<T & DOMAttributes<T>
-    & { children: any; }
-    & ReactCustomEvents<`on${K}`>>;
+export type ReactElement<T, K extends string = ''> =
+  & T
+  & DOMAttributes<T>
+  & { children?: any; }
+  & ('' extends K ? {} : ReactCustomEvents<`on${K}`>);
