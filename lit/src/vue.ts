@@ -1,6 +1,5 @@
-import './types/vue.types';
+import './components';
 import { userLitDirectives } from './directives';
-import type { VueComponents } from './types/vue.types';
 
 export type { VueComponents } from './types/vue.types';
 
@@ -13,6 +12,3 @@ export const useLitForVue: import('vue').Plugin = {
   },
 };
 
-declare module '@vue/runtime-core' {
-  interface GlobalComponents extends VueComponents { }
-}

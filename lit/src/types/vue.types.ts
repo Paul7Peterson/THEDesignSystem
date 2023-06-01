@@ -12,3 +12,8 @@ export interface VueComponents {
   /** ## `<z-text-input>` */
   ZTextInput: VueLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
 }
+
+
+declare module '@vue/runtime-core' {
+  interface GlobalComponents extends VueComponents { }
+}

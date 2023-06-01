@@ -33,8 +33,9 @@ export default defineConfig({
       ],
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
-        vue: path.resolve(__dirname, 'src/vue.ts'),
+        react: path.resolve(__dirname, 'src/react.ts'),
         vite: path.resolve(__dirname, 'src/vite.ts'),
+        vue: path.resolve(__dirname, 'src/vue.ts'),
         'components/test-lit': path.resolve(__dirname, 'src/components/test-lit.ts'),
         ...chuckParser(),
       },
@@ -61,7 +62,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8081,
+    port: 8080,
   },
   define: {
     'process.env': process.env,

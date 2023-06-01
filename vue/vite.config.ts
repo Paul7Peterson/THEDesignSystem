@@ -3,24 +3,18 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-// import { ignoreCustomTags } from '@local/lit';
+// import { ignoreCustomTags } from '@local/lit/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag: string) => tag.endsWith('-lit') || tag.startsWith('z-'),
-        },
-      },
-    }),
+    vue({}),
   ],
   build: {
     chunkSizeWarningLimit: 1_000,
   },
   server: {
-    port: 8080,
+    port: 8081,
   },
   define: {
     'process.env': process.env,
