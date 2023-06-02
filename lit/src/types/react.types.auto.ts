@@ -3,44 +3,64 @@ import type { ReactLitComponent } from './reactHelpers.types';
 
 /** Dictionary of components with specifications for React */
 export interface ReactComponents {
-  /** ## `<z-currency>` undefined */
+  /** ## `<z-currency>` ## `<z-currency>`  
+ */
   'z-currency': ReactLitComponent<Z.ZCurrencyProps>;
-  /** ## `<z-date>` undefined */
+  /** ## `<z-date>` ## `<z-date>`  
+ */
   'z-date': ReactLitComponent<Z.ZDateProps>;
-  /** ## `<z-heading>` undefined */
+  /** ## `<z-heading>` ## `<z-heading>`  
+ */
   'z-heading': ReactLitComponent<Z.ZHeadingProps>;
-  /** ## `<z-icon>` undefined */
+  /** ## `<z-icon>` ## `<z-icon>`  
+... */
   'z-icon': ReactLitComponent<Z.ZIconProps>;
-  /** ## `<z-image>` undefined */
+  /** ## `<z-image>` ## `<z-image>`  
+ */
   'z-image': ReactLitComponent<Z.ZImageProps>;
-  /** ## `<z-number>` undefined */
+  /** ## `<z-number>` ## `<z-number>`  
+ */
   'z-number': ReactLitComponent<Z.ZNumberProps>;
-  /** ## `<z-spinner>` undefined */
+  /** ## `<z-spinner>` ## `<z-spinner>`  
+ */
   'z-spinner': ReactLitComponent<Z.ZSpinnerProps>;
-  /** ## `<z-tooltip>` undefined */
+  /** ## `<z-tooltip>` ## `<z-tooltip>`  
+ */
   'z-tooltip': ReactLitComponent<Z.ZTooltipProps>;
-  /** ## `<z-card>` undefined */
+  /** ## `<z-card>` ## `<z-card>`  
+ */
   'z-card': ReactLitComponent<Z.ZCardProps>;
-  /** ## `<z-modal>` undefined */
+  /** ## `<z-modal>` ## `<z-modal>`  
+ */
   'z-modal': ReactLitComponent<Z.ZModalProps>;
-  /** ## `<z-button>` undefined */
+  /** ## `<z-button>` ## `<z-button>`  
+ */
   'z-button': ReactLitComponent<Z.ZButtonProps>;
-  /** ## `<z-checkbox>` undefined */
+  /** ## `<z-checkbox>` ## `<z-checkbox>`  
+ */
   'z-checkbox': ReactLitComponent<Z.ZCheckboxProps>;
-  /** ## `<z-chip>` undefined */
+  /** ## `<z-chip>` ## `<z-chip>`  
+ */
   'z-chip': ReactLitComponent<Z.ZChipProps>;
-  /** ## `<z-label>` undefined */
+  /** ## `<z-label>` ## `<z-label>`  
+Label */
   'z-label': ReactLitComponent<Z.ZLabelProps>;
-  /** ## `<z-number-input>` undefined */
+  /** ## `<z-number-input>` ## `<z-number-input>`  
+ */
   'z-number-input': ReactLitComponent<Z.ZNumberInputProps>;
-  /** ## `<z-output>` undefined */
+  /** ## `<z-output>` ## `<z-output>`  
+ */
   'z-output': ReactLitComponent<Z.ZOutputProps>;
-  /** ## `<z-select>` undefined */
+  /** ## `<z-select>` ## `<z-select>`  
+ */
   'z-select': ReactLitComponent<Z.ZSelectProps>;
-  /** ## `<z-switch>` undefined */
+  /** ## `<z-switch>` ## `<z-switch>`  
+ */
   'z-switch': ReactLitComponent<Z.ZSwitchProps>;
-  /** ## `<z-text-input>` undefined */
+  /** ## `<z-text-input>` ## `<z-text-input>`  
+ */
   'z-text-input': ReactLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
-  /** ## `<z-test-lit>` undefined */
+  /** ## `<z-test-lit>` ## `<z-test-lit>`  
+ */
   'z-test-lit': ReactLitComponent<Z.ZTestLitProps>;
 }

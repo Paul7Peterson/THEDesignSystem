@@ -85,6 +85,7 @@ function buildComponentDocs (
 
 const REG_Props = /export interface (?<props>Z[\w]+Props) {(?<propsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
 const REG_Emits = /export interface (?<emits>Z[\w]+Emits) {(?<emitsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
+const REG_Desc = /\/\*\* (?<description>.*)\*(.*[\\\*\\\/])\n@customElement/g;
 
 async function getComponentsDocs (): Promise<ComponentDocs[]> {
   const files = await Promise.all(getFilePaths(path.resolve('lit', 'src', 'components'))
@@ -98,16 +99,18 @@ async function getComponentsDocs (): Promise<ComponentDocs[]> {
     REG_Props.exec('');
     const { emits, emitsContent } = REG_Emits.exec(fileContent)?.groups || {};
     REG_Emits.exec('');
-    const description = '';
+    const { description } = REG_Desc.exec(fileContent)?.groups || {};
+    REG_Desc.exec('');
 
     const parsedProps = parseInterface(propsContent);
     const parsedEmits = parseInterface(emitsContent);
+    const parsedDescription = `## \`<${name}>\`  \n${description.trim()}`;
 
-    // console.log({ parsedProps, parsedEmits });
+    console.log(parsedDescription);
 
     const result: HTMLTag = { name };
 
-    if (description) result.description = description;
+    if (parsedDescription) result.description = parsedDescription;
     if (!!props && parsedProps && Object.keys(parsedProps).length)
       result.attributes = Object.entries(parsedProps).map(([k, v]) => ({
         name: k,

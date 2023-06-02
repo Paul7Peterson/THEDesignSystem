@@ -10,7 +10,7 @@ export interface ZLabelProps {
 
 }
 
-/** */
+/** Label */
 @customElement('z-label')
 export class ZLabel extends LitElement {
 
