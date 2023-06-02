@@ -2,14 +2,14 @@ import { runZX } from './runZX';
 import * as path from 'path';
 import * as fs from 'fs';
 import { capitalize, getFilePaths, joinLines, readFile, toPascalCase } from './helpers';
-import type { ComponentDocs, HTMLTag } from './test.types';
+import type { ComponentDocs, HTMLTag, HTMLTag_Attribute } from './test.types';
 
 /** */
 runZX(__filename, async () => {
 
   const components = await getComponentsDocs();
 
-  console.log(components);
+  // console.log(components);
 
   await Promise.all([
     writeReactTypes(components),
@@ -83,7 +83,8 @@ function buildComponentDocs (
   ]);
 }
 
-const REG = /(export interface (?<emits>Z\w+Emits) {)|(export interface (?<props>Z\w+Props) {)/g;
+const REG_Props = /export interface (?<props>Z[\w]+Props) {(?<propsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
+const REG_Emits = /export interface (?<emits>Z[\w]+Emits) {(?<emitsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
 
 async function getComponentsDocs (): Promise<ComponentDocs[]> {
   const files = await Promise.all(getFilePaths(path.resolve('lit', 'src', 'components'))
@@ -93,20 +94,62 @@ async function getComponentsDocs (): Promise<ComponentDocs[]> {
 
   return files.map(([name, fileContent]) => {
 
-    const content = REG.exec(fileContent);
+    const { props, propsContent } = REG_Props.exec(fileContent)?.groups || {};
+    REG_Props.exec('');
+    const { emits, emitsContent } = REG_Emits.exec(fileContent)?.groups || {};
+    REG_Emits.exec('');
 
-    console.log(content?.groups);
+    const parsedProps = parseInterface(propsContent);
+    const parsedEmits = parseInterface(emitsContent);
+
+    // console.log({ parsedProps, parsedEmits });
 
     const result: HTMLTag = {
       name,
       description: '',
     };
 
-    if (!!content?.groups?.props) result.attributes = [];
+    if (!!props && parsedProps) result.attributes = Object.entries(parsedProps).map(([k, v]) => ({
+      name: k,
+      description: v.docs
+    } satisfies HTMLTag_Attribute));
 
     return [result, {
-      hasEvents: !!content?.groups?.emits,
-      hasProps: !!content?.groups?.props,
+      hasEvents: !!emits,
+      hasProps: !!props,
     }];
   });
+}
+
+function parseInterface (content?: string) {
+  let count = 0;
+  return content
+    ?.split(/(\n[\s]{2})/)
+    .filter((s) => s && !s.startsWith('\n'))
+    .reduce((t, line) => {
+      if (!t[count]) t[count] = [];
+      if (line.endsWith(';')) {
+        t[count].unshift(line);
+        count++;
+      } else {
+        t[count].push(line);
+      }
+      return t;
+    }, [] as string[][])
+    .reduce((t, lines) => {
+      const [variable, ...docs] = lines;
+      const [name, type] = variable.split(': ');
+      const isOptional = name.endsWith('?');
+
+      t[isOptional ? name.replace(/.$/, '') : name] = {
+        docs: docs.map((d) => d.replace(/(\/\*\* |\*\/)/g, '').trim()).join('  \n'),
+        isOptional,
+        type: type.replace(/.$/, ''),
+      };
+      return t;
+    }, {} as Record<string, {
+      docs: string;
+      isOptional: boolean;
+      type: string;
+    }>);
 }

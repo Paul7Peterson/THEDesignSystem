@@ -5,6 +5,7 @@ import { customElement } from 'lit/decorators.js';
 
 import SCSS from './z-spinner.scss?inline';
 
+/** */
 export interface ZSpinnerProps {
 
 }

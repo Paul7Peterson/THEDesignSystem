@@ -20,7 +20,7 @@ export interface ZImageProps {
   /** */
   alt: string;
   /** */
-  sources?: ZImageSource[],
+  sources?: ZImageSource[];
   /** */
   ratio?: `${number}:${number}` | number | 'auto';
 }

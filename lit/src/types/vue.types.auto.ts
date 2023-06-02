@@ -6,43 +6,43 @@ export interface VueComponents {
   /** ## `<z-currency>`  */
   ZCurrency: VueLitComponent<Z.ZCurrencyProps>;
   /** ## `<z-date>`  */
-  ZDate: VueLitComponent;
+  ZDate: VueLitComponent<Z.ZDateProps>;
   /** ## `<z-heading>`  */
   ZHeading: VueLitComponent<Z.ZHeadingProps>;
   /** ## `<z-icon>`  */
-  ZIcon: VueLitComponent;
+  ZIcon: VueLitComponent<Z.ZIconProps>;
   /** ## `<z-image>`  */
   ZImage: VueLitComponent<Z.ZImageProps>;
   /** ## `<z-number>`  */
-  ZNumber: VueLitComponent;
+  ZNumber: VueLitComponent<Z.ZNumberProps>;
   /** ## `<z-spinner>`  */
   ZSpinner: VueLitComponent<Z.ZSpinnerProps>;
   /** ## `<z-tooltip>`  */
-  ZTooltip: VueLitComponent;
+  ZTooltip: VueLitComponent<Z.ZTooltipProps>;
   /** ## `<z-card>`  */
   ZCard: VueLitComponent<Z.ZCardProps>;
   /** ## `<z-modal>`  */
-  ZModal: VueLitComponent;
+  ZModal: VueLitComponent<Z.ZModalProps>;
   /** ## `<z-button>`  */
   ZButton: VueLitComponent<Z.ZButtonProps>;
   /** ## `<z-checkbox>`  */
-  ZCheckbox: VueLitComponent;
+  ZCheckbox: VueLitComponent<Z.ZCheckboxProps>;
   /** ## `<z-chip>`  */
   ZChip: VueLitComponent<Z.ZChipProps>;
   /** ## `<z-label>`  */
-  ZLabel: VueLitComponent;
+  ZLabel: VueLitComponent<Z.ZLabelProps>;
   /** ## `<z-number-input>`  */
   ZNumberInput: VueLitComponent<Z.ZNumberInputProps>;
   /** ## `<z-output>`  */
-  ZOutput: VueLitComponent;
+  ZOutput: VueLitComponent<Z.ZOutputProps>;
   /** ## `<z-select>`  */
   ZSelect: VueLitComponent<Z.ZSelectProps>;
   /** ## `<z-switch>`  */
   ZSwitch: VueLitComponent<Z.ZSwitchProps>;
   /** ## `<z-text-input>`  */
-  ZTextInput: VueLitComponent<{}, Z.ZTextInputEmits>;
+  ZTextInput: VueLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
   /** ## `<z-test-lit>`  */
-  ZTestLit: VueLitComponent;
+  ZTestLit: VueLitComponent<Z.ZTestLitProps>;
 }
 
 declare module '@vue/runtime-core' {

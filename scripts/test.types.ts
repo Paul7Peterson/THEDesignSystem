@@ -13,7 +13,7 @@ export interface HTMLTag extends HTMLBase {
   attributes?: HTMLTag_Attribute[];
 }
 
-interface HTMLTag_Attribute extends HTMLBase {
+export interface HTMLTag_Attribute extends HTMLBase {
 
   values?: HTMLTag_Attribute_Value[];
 }
