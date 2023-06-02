@@ -6,57 +6,45 @@
   "tags": [
     {
       "name": "z-currency",
-      "description": "",
       "attributes": [
         {
-          "name": "value",
-          "description": ""
+          "name": "value"
         },
         {
-          "name": "currency",
-          "description": ""
+          "name": "currency"
         },
         {
-          "name": "locale",
-          "description": ""
+          "name": "locale"
         }
       ]
     },
     {
       "name": "z-date",
-      "description": "",
       "attributes": [
         {
-          "name": "date",
-          "description": ""
+          "name": "date"
         },
         {
-          "name": "locale",
-          "description": ""
+          "name": "locale"
         },
         {
-          "name": "options",
-          "description": ""
+          "name": "options"
         }
       ]
     },
     {
       "name": "z-heading",
-      "description": "",
       "attributes": [
         {
-          "name": "text",
-          "description": ""
+          "name": "text"
         },
         {
-          "name": "level",
-          "description": ""
+          "name": "level"
         }
       ]
     },
     {
       "name": "z-icon",
-      "description": "",
       "attributes": [
         {
           "name": "icon",
@@ -66,72 +54,55 @@
     },
     {
       "name": "z-image",
-      "description": "",
       "attributes": [
         {
           "name": "src",
           "description": "Source of he biggest image to present"
         },
         {
-          "name": "alt",
-          "description": ""
+          "name": "alt"
         },
         {
-          "name": "sources",
-          "description": ""
+          "name": "sources"
         },
         {
-          "name": "ratio",
-          "description": ""
+          "name": "ratio"
         }
       ]
     },
     {
       "name": "z-number",
-      "description": "",
       "attributes": [
         {
-          "name": "value",
-          "description": ""
+          "name": "value"
         },
         {
-          "name": "locale",
-          "description": ""
+          "name": "locale"
         }
       ]
     },
     {
-      "name": "z-spinner",
-      "description": "",
-      "attributes": []
+      "name": "z-spinner"
     },
     {
       "name": "z-tooltip",
-      "description": "",
       "attributes": [
         {
-          "name": "tooltip",
-          "description": ""
+          "name": "tooltip"
         },
         {
-          "name": "noSelect",
-          "description": ""
+          "name": "noSelect"
         }
       ]
     },
     {
-      "name": "z-card",
-      "description": "",
-      "attributes": []
+      "name": "z-card"
     },
     {
-      "name": "z-modal",
-      "description": "",
-      "attributes": []
+      "name": "z-modal"
     },
     {
       "name": "z-button",
-      "description": "",
       "attributes": [
         {
           "name": "text",
@@ -141,65 +112,48 @@
     },
     {
       "name": "z-checkbox",
-      "description": "",
       "attributes": [
         {
-          "name": "value",
-          "description": ""
+          "name": "value"
         },
         {
-          "name": "disabled",
-          "description": ""
+          "name": "disabled"
         }
       ]
     },
     {
-      "name": "z-chip",
-      "description": "",
-      "attributes": []
+      "name": "z-chip"
     },
     {
-      "name": "z-label",
-      "description": "",
-      "attributes": []
+      "name": "z-label"
     },
     {
       "name": "z-number-input",
-      "description": "",
       "attributes": [
         {
-          "name": "number",
-          "description": ""
+          "name": "number"
         }
       ]
     },
     {
-      "name": "z-output",
-      "description": "",
-      "attributes": []
+      "name": "z-output"
     },
     {
-      "name": "z-select",
-      "description": "",
-      "attributes": []
+      "name": "z-select"
     },
     {
       "name": "z-switch",
-      "description": "",
       "attributes": [
         {
-          "name": "value",
-          "description": ""
+          "name": "value"
         },
         {
-          "name": "disable",
-          "description": ""
+          "name": "disable"
         }
       ]
     },
     {
       "name": "z-text-input",
-      "description": "",
       "attributes": [
         {
           "name": "text",
@@ -209,7 +163,6 @@
     },
     {
       "name": "z-test-lit",
-      "description": "",
       "attributes": [
         {
           "name": "text",

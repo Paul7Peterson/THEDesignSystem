@@ -3,44 +3,44 @@ import type { ReactLitComponent } from './reactHelpers.types';
 
 /** Dictionary of components with specifications for React */
 export interface ReactComponents {
-  /** ## `<z-currency>`  */
+  /** ## `<z-currency>` undefined */
   'z-currency': ReactLitComponent<Z.ZCurrencyProps>;
-  /** ## `<z-date>`  */
+  /** ## `<z-date>` undefined */
   'z-date': ReactLitComponent<Z.ZDateProps>;
-  /** ## `<z-heading>`  */
+  /** ## `<z-heading>` undefined */
   'z-heading': ReactLitComponent<Z.ZHeadingProps>;
-  /** ## `<z-icon>`  */
+  /** ## `<z-icon>` undefined */
   'z-icon': ReactLitComponent<Z.ZIconProps>;
-  /** ## `<z-image>`  */
+  /** ## `<z-image>` undefined */
   'z-image': ReactLitComponent<Z.ZImageProps>;
-  /** ## `<z-number>`  */
+  /** ## `<z-number>` undefined */
   'z-number': ReactLitComponent<Z.ZNumberProps>;
-  /** ## `<z-spinner>`  */
+  /** ## `<z-spinner>` undefined */
   'z-spinner': ReactLitComponent<Z.ZSpinnerProps>;
-  /** ## `<z-tooltip>`  */
+  /** ## `<z-tooltip>` undefined */
   'z-tooltip': ReactLitComponent<Z.ZTooltipProps>;
-  /** ## `<z-card>`  */
+  /** ## `<z-card>` undefined */
   'z-card': ReactLitComponent<Z.ZCardProps>;
-  /** ## `<z-modal>`  */
+  /** ## `<z-modal>` undefined */
   'z-modal': ReactLitComponent<Z.ZModalProps>;
-  /** ## `<z-button>`  */
+  /** ## `<z-button>` undefined */
   'z-button': ReactLitComponent<Z.ZButtonProps>;
-  /** ## `<z-checkbox>`  */
+  /** ## `<z-checkbox>` undefined */
   'z-checkbox': ReactLitComponent<Z.ZCheckboxProps>;
-  /** ## `<z-chip>`  */
+  /** ## `<z-chip>` undefined */
   'z-chip': ReactLitComponent<Z.ZChipProps>;
-  /** ## `<z-label>`  */
+  /** ## `<z-label>` undefined */
   'z-label': ReactLitComponent<Z.ZLabelProps>;
-  /** ## `<z-number-input>`  */
+  /** ## `<z-number-input>` undefined */
   'z-number-input': ReactLitComponent<Z.ZNumberInputProps>;
-  /** ## `<z-output>`  */
+  /** ## `<z-output>` undefined */
   'z-output': ReactLitComponent<Z.ZOutputProps>;
-  /** ## `<z-select>`  */
+  /** ## `<z-select>` undefined */
   'z-select': ReactLitComponent<Z.ZSelectProps>;
-  /** ## `<z-switch>`  */
+  /** ## `<z-switch>` undefined */
   'z-switch': ReactLitComponent<Z.ZSwitchProps>;
-  /** ## `<z-text-input>`  */
+  /** ## `<z-text-input>` undefined */
   'z-text-input': ReactLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
-  /** ## `<z-test-lit>`  */
+  /** ## `<z-test-lit>` undefined */
   'z-test-lit': ReactLitComponent<Z.ZTestLitProps>;
 }

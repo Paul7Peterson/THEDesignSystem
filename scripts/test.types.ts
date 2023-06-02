@@ -2,7 +2,7 @@
 
 interface HTMLBase {
   name: string,
-  description: string,
+  description?: string,
 }
 
 export interface HTMLTag extends HTMLBase {

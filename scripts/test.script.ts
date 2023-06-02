@@ -98,21 +98,21 @@ async function getComponentsDocs (): Promise<ComponentDocs[]> {
     REG_Props.exec('');
     const { emits, emitsContent } = REG_Emits.exec(fileContent)?.groups || {};
     REG_Emits.exec('');
+    const description = '';
 
     const parsedProps = parseInterface(propsContent);
     const parsedEmits = parseInterface(emitsContent);
 
     // console.log({ parsedProps, parsedEmits });
 
-    const result: HTMLTag = {
-      name,
-      description: '',
-    };
+    const result: HTMLTag = { name };
 
-    if (!!props && parsedProps) result.attributes = Object.entries(parsedProps).map(([k, v]) => ({
-      name: k,
-      description: v.docs
-    } satisfies HTMLTag_Attribute));
+    if (description) result.description = description;
+    if (!!props && parsedProps && Object.keys(parsedProps).length)
+      result.attributes = Object.entries(parsedProps).map(([k, v]) => ({
+        name: k,
+        description: v.docs
+      } satisfies HTMLTag_Attribute));
 
     return [result, {
       hasEvents: !!emits,
@@ -141,14 +141,17 @@ function parseInterface (content?: string) {
       const [name, type] = variable.split(': ');
       const isOptional = name.endsWith('?');
 
-      t[isOptional ? name.replace(/.$/, '') : name] = {
-        docs: docs.map((d) => d.replace(/(\/\*\* |\*\/)/g, '').trim()).join('  \n'),
+      const parsedDocs = docs.map((d) => d.replace(/(\/\*\* |\*\/)/g, '').trim()).join('  \n');
+      const parsedName = isOptional ? name.replace(/.$/, '') : name;
+
+      t[parsedName] = {
         isOptional,
         type: type.replace(/.$/, ''),
       };
+      if (parsedDocs) t[parsedName].docs = parsedDocs;
       return t;
     }, {} as Record<string, {
-      docs: string;
+      docs?: string;
       isOptional: boolean;
       type: string;
     }>);

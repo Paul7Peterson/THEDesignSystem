@@ -3,45 +3,45 @@ import type { VueLitComponent } from './vueHelpers.types';
 
 /** Dictionary of components with specifications for Vue 3 */
 export interface VueComponents {
-  /** ## `<z-currency>`  */
+  /** ## `<z-currency>` undefined */
   ZCurrency: VueLitComponent<Z.ZCurrencyProps>;
-  /** ## `<z-date>`  */
+  /** ## `<z-date>` undefined */
   ZDate: VueLitComponent<Z.ZDateProps>;
-  /** ## `<z-heading>`  */
+  /** ## `<z-heading>` undefined */
   ZHeading: VueLitComponent<Z.ZHeadingProps>;
-  /** ## `<z-icon>`  */
+  /** ## `<z-icon>` undefined */
   ZIcon: VueLitComponent<Z.ZIconProps>;
-  /** ## `<z-image>`  */
+  /** ## `<z-image>` undefined */
   ZImage: VueLitComponent<Z.ZImageProps>;
-  /** ## `<z-number>`  */
+  /** ## `<z-number>` undefined */
   ZNumber: VueLitComponent<Z.ZNumberProps>;
-  /** ## `<z-spinner>`  */
+  /** ## `<z-spinner>` undefined */
   ZSpinner: VueLitComponent<Z.ZSpinnerProps>;
-  /** ## `<z-tooltip>`  */
+  /** ## `<z-tooltip>` undefined */
   ZTooltip: VueLitComponent<Z.ZTooltipProps>;
-  /** ## `<z-card>`  */
+  /** ## `<z-card>` undefined */
   ZCard: VueLitComponent<Z.ZCardProps>;
-  /** ## `<z-modal>`  */
+  /** ## `<z-modal>` undefined */
   ZModal: VueLitComponent<Z.ZModalProps>;
-  /** ## `<z-button>`  */
+  /** ## `<z-button>` undefined */
   ZButton: VueLitComponent<Z.ZButtonProps>;
-  /** ## `<z-checkbox>`  */
+  /** ## `<z-checkbox>` undefined */
   ZCheckbox: VueLitComponent<Z.ZCheckboxProps>;
-  /** ## `<z-chip>`  */
+  /** ## `<z-chip>` undefined */
   ZChip: VueLitComponent<Z.ZChipProps>;
-  /** ## `<z-label>`  */
+  /** ## `<z-label>` undefined */
   ZLabel: VueLitComponent<Z.ZLabelProps>;
-  /** ## `<z-number-input>`  */
+  /** ## `<z-number-input>` undefined */
   ZNumberInput: VueLitComponent<Z.ZNumberInputProps>;
-  /** ## `<z-output>`  */
+  /** ## `<z-output>` undefined */
   ZOutput: VueLitComponent<Z.ZOutputProps>;
-  /** ## `<z-select>`  */
+  /** ## `<z-select>` undefined */
   ZSelect: VueLitComponent<Z.ZSelectProps>;
-  /** ## `<z-switch>`  */
+  /** ## `<z-switch>` undefined */
   ZSwitch: VueLitComponent<Z.ZSwitchProps>;
-  /** ## `<z-text-input>`  */
+  /** ## `<z-text-input>` undefined */
   ZTextInput: VueLitComponent<Z.ZTextInputProps, Z.ZTextInputEmits>;
-  /** ## `<z-test-lit>`  */
+  /** ## `<z-test-lit>` undefined */
   ZTestLit: VueLitComponent<Z.ZTestLitProps>;
 }
 
