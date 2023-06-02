@@ -8,7 +8,7 @@
     "dev:lit": "cd ./lit && npm run dev",
     "dev:react": "cd ./react && npm run dev",
     "dev:vue": "cd ./vue && npm run dev",
-    "test": "ts-node --project scripts/tsconfig.json -r tsconfig-paths/register ./scripts/test.script.ts"
+    "script:lit": "ts-node --project scripts/tsconfig.json -r tsconfig-paths/register ./scripts/lit.script.ts"
   },
   "devDependencies": {
     "@paul7peterson/typescript-toolbox": "^0.0.2",

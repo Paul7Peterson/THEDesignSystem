@@ -47,6 +47,10 @@
       ]
     },
     {
+      "name": "IconList",
+      "description": "## `<IconList>`  \n"
+    },
+    {
       "name": "z-icon",
       "description": "## `<z-icon>`  \n...",
       "attributes": [

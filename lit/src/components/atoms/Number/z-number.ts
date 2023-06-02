@@ -15,9 +15,9 @@ export interface ZNumberProps {
 /** */
 @customElement('z-number')
 export class ZNumber extends LitElement implements ZNumberProps {
-  @property()
+  @property({ type: Number, attribute: 'value' })
   value: number = 0;
-  @property()
+  @property({ type: String, attribute: 'locale' })
   locale: Required<ZNumberProps>['locale'] = 'en';
 
   get parsedValue (): string {

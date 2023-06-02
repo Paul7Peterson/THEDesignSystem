@@ -4,6 +4,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-date.scss?inline';
+import { dateConverter } from '~/utils/converters';
 
 export interface ZDateProps {
   /** */
@@ -18,8 +19,8 @@ export interface ZDateProps {
 @customElement('z-date')
 export class ZDate extends LitElement implements ZDateProps {
 
-  @property()
-  date: Date = new Date();
+  @property({ converter: dateConverter, attribute: 'date', reflect: true })
+  date!: Date;
   @property()
   locale: Required<ZDateProps['locale']> = 'en';
   @property()

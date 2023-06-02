@@ -15,7 +15,7 @@ export interface ZIconProps {
 @customElement('z-icon')
 export class ZIcon extends LitElement implements ZIconProps {
   /** Icon */
-  @property()
+  @property({ type: String, attribute: 'icon' })
   icon!: ZIconProps['icon'];
 
   render () {

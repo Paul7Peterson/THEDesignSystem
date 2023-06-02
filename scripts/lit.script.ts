@@ -2,7 +2,7 @@ import { runZX } from './runZX';
 import * as path from 'path';
 import * as fs from 'fs';
 import { capitalize, getFilePaths, joinLines, readFile, toPascalCase } from './helpers';
-import type { ComponentDocs, HTMLTag, HTMLTag_Attribute } from './test.types';
+import type { ComponentDocs, HTMLTag, HTMLTag_Attribute } from './lit.types';
 
 /** */
 runZX(__filename, async () => {
@@ -78,7 +78,7 @@ function buildComponentDocs (
     signature.push(`Z.${toPascalCase(name)}Emits`);
   };
   return joinLines([
-    `  /** ## \`<${name}>\` ${description} */`,
+    `  /** ${description?.split('  \n').join('  \n   * ')} */`,
     `  ${parsedName}: ${compType}${signature.length ? `<${signature.join(', ')}>` : ''};`
   ]);
 }
@@ -104,7 +104,7 @@ async function getComponentsDocs (): Promise<ComponentDocs[]> {
 
     const parsedProps = parseInterface(propsContent);
     const parsedEmits = parseInterface(emitsContent);
-    const parsedDescription = `## \`<${name}>\`  \n${description.trim()}`;
+    const parsedDescription = `## \`<${name}>\`  \n${description?.trim() || ''}`;
 
     console.log(parsedDescription);
 
