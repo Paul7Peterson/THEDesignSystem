@@ -37,7 +37,7 @@ export default defineConfig({
         react: path.resolve(__dirname, 'src/react.ts'),
         vite: path.resolve(__dirname, 'src/vite.ts'),
         vue: path.resolve(__dirname, 'src/vue.ts'),
-        'components/test-lit': path.resolve(__dirname, 'src/components/test-lit.ts'),
+        'z-test-lit': path.resolve(__dirname, 'src/components/z-test-lit.ts'),
         ...chuckParser(),
       },
       output: {
