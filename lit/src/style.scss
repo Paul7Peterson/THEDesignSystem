@@ -39,6 +39,7 @@ body {
   section {
     display: grid;
     gap: var(--gutter-xs);
+    grid-auto-rows: max-content;
   }
 }
 

@@ -4,7 +4,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { chuckParser } from './vite.helpers';
-
+import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +12,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
+    svgLoader(),
   ],
   build: {
     minify: true,

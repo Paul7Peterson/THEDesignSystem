@@ -91,6 +91,7 @@
     "typescript": "^5.0.4",
     "vite": "^4.3.8",
     "vite-plugin-dts": "^2.3.0",
+    "vite-svg-loader": "^4.0.0",
     "vitest": "^0.31.1",
     "vue": "^3.3.4"
   }
