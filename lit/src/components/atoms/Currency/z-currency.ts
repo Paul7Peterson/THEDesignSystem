@@ -3,15 +3,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-currency.scss?inline';
-
-export interface ZCurrencyProps {
-  /** */
-  value: number;
-  /** */
-  currency?: 'EUR' | 'USD';
-  /** */
-  locale?: string;
-}
+import type { ZCurrencyProps } from './z-currency.props';
 
 /** */
 @customElement('z-currency')

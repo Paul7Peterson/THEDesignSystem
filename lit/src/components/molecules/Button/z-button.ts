@@ -3,15 +3,11 @@ import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-button.scss?inline';
 import { emitEvent } from '~/utils';
-
-export interface ZButtonProps {
-  /** Text of the button */
-  text?: string;
-}
+import type { ZButtonProps } from './z-button.props';
 
 /** */
 @customElement('z-button')
-export class ZButton extends LitElement {
+export class ZButton extends LitElement implements ZButtonProps {
   @property({ type: String, attribute: 'text' })
   text!: string;
 

@@ -2,13 +2,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-test-lit.scss?inline';
-
-export interface ZTestLitProps {
-  /** Text input */
-  text: string;
-  /** Able logo */
-  hasLogo?: boolean;
-}
+import type { ZTestLitProps } from './z-test-lit.props';
 
 /** */
 @customElement('z-test-lit')

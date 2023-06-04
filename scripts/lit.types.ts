@@ -23,3 +23,15 @@ interface HTMLTag_Attribute_Value extends HTMLBase {
 }
 
 export type ComponentDocs = readonly [HTMLTag, { hasProps: boolean, hasEvents: boolean; }];
+
+export interface AttrInfo {
+  docs?: string;
+  isOptional: boolean;
+  type: string;
+}
+
+export interface FilesContent {
+  name: string,
+  main: { description?: string; },
+  props: Partial<Record<'props' | 'emits', Record<string, AttrInfo>>>;
+}

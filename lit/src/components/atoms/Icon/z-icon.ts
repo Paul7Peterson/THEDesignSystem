@@ -5,11 +5,8 @@ import { customElement, property } from 'lit/decorators.js';
 import { ICON } from './IconList';
 
 import SCSS from './z-icon.scss?inline';
+import type { ZIconProps } from './z-icon.props';
 
-export interface ZIconProps {
-  /** Icon value */
-  icon: keyof typeof ICON;
-}
 
 /** ... */
 @customElement('z-icon')

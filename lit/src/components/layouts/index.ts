@@ -1,2 +1,2 @@
-export * from './Card/z-card';
-export * from './Modal/z-modal';
+export * from './Card';
+export * from './Modal';

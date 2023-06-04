@@ -4,13 +4,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-number.scss?inline';
-
-export interface ZNumberProps {
-  /** */
-  value: number;
-  /** */
-  locale?: string;
-}
+import type { ZNumberProps } from './z-number.props';
 
 /** */
 @customElement('z-number')

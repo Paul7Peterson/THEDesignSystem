@@ -5,17 +5,12 @@ import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-switch.scss?inline';
 import { emitEvent } from '~/utils';
+import { ZSwitchProps } from './z-switch.props';
 
-export interface ZSwitchProps {
-  /** */
-  value: boolean;
-  /** */
-  disable?: boolean;
-}
 
 /** */
 @customElement('z-switch')
-export class ZSwitch extends LitElement {
+export class ZSwitch extends LitElement implements ZSwitchProps {
   @property()
   value!: boolean;
   @property()

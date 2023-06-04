@@ -1,20 +1,19 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-output.scss?inline';
-
-export interface ZOutputProps {
-
-}
+import type { ZOutputProps } from './z-output.props';
 
 /** */
 @customElement('z-output')
-export class ZOutput extends LitElement {
+export class ZOutput extends LitElement implements ZOutputProps {
+  @property()
+  value!: string;
 
   render () {
-    return html``;
+    return html`<output .value="${this.value}"/>`;
   }
 
   static styles = unsafeCSS(SCSS);

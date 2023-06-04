@@ -3,21 +3,12 @@ import { customElement, property } from 'lit/decorators.js';
 import { emitEvent } from '~/utils';
 
 import SCSS from './z-text-input.scss?inline';
+import type { ZTextInputProps } from './z-text-input.props';
 
-/** Text input props */
-export interface ZTextInputProps {
-  /** Text model */
-  text: string;
-}
-
-/** Text input emits */
-export interface ZTextInputEmits {
-  'change:text'?: (text: CustomEvent<string>) => void;
-}
 
 /** */
 @customElement('z-text-input')
-export class ZTextInput extends LitElement {
+export class ZTextInput extends LitElement implements ZTextInputProps {
   @property({ type: String, attribute: 'text' })
   text!: string;
 

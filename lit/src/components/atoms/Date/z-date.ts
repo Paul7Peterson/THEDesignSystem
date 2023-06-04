@@ -5,15 +5,8 @@ import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-date.scss?inline';
 import { dateConverter } from '~/utils/converters';
+import type { ZDateProps } from './z-date.props';
 
-export interface ZDateProps {
-  /** */
-  date: Date;
-  /** */
-  locale?: string;
-  /** */
-  options?: Intl.DateTimeFormatOptions;
-}
 
 /** */
 @customElement('z-date')

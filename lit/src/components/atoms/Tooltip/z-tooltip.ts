@@ -4,13 +4,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-tooltip.scss?inline';
-
-export interface ZTooltipProps {
-  /** */
-  tooltip?: string;
-  /** */
-  noSelect?: boolean;
-}
+import type { ZTooltipProps } from './z-tooltip.props';
 
 /** */
 @customElement('z-tooltip')

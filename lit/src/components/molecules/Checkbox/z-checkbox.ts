@@ -5,11 +5,8 @@ import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-checkbox.scss?inline';
 import { emitEvent } from '~/utils';
+import type { ZCheckboxProps } from './z-checkbox.props';
 
-export interface ZCheckboxProps {
-  value: boolean;
-  disabled?: boolean;
-}
 
 /** */
 @customElement('z-checkbox')

@@ -1,21 +1,21 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-label.scss?inline';
+import type { ZLabelProps } from './z-label.props';
 
-/** */
-export interface ZLabelProps {
 
-}
 
 /** Label */
 @customElement('z-label')
-export class ZLabel extends LitElement {
+export class ZLabel extends LitElement implements ZLabelProps {
+  @property({ type: String, attribute: 'label' })
+  label!: string;
 
   render () {
-    return html``;
+    return html`<label>${this.label}</label>`;
   }
 
   static styles = unsafeCSS(SCSS);

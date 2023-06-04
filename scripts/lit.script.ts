@@ -2,7 +2,7 @@ import { runZX } from './runZX';
 import * as path from 'path';
 import * as fs from 'fs';
 import { capitalize, getFilePaths, joinLines, readFile, toPascalCase } from './helpers';
-import type { ComponentDocs, HTMLTag, HTMLTag_Attribute } from './lit.types';
+import type { AttrInfo, ComponentDocs, FilesContent, HTMLTag, HTMLTag_Attribute } from './lit.types';
 
 /** */
 runZX(__filename, async () => {
@@ -83,36 +83,16 @@ function buildComponentDocs (
   ]);
 }
 
-const REG_Props = /export interface (?<props>Z[\w]+Props) {(?<propsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
-const REG_Emits = /export interface (?<emits>Z[\w]+Emits) {(?<emitsContent>\n(.|\n|\r|\t)*?)\n}\n\n/gm;
-const REG_Desc = /\/\*\* (?<description>.*)\*(.*[\\\*\\\/])\n@customElement/g;
-
 async function getComponentsDocs (): Promise<ComponentDocs[]> {
-  const files = await Promise.all(getFilePaths(path.resolve('lit', 'src', 'components'))
-    .map((file) => [file.split('\\').at(-1) || '', file] as const)
-    .filter(([name, _]) => name.endsWith('.ts') && !name.endsWith('.spec.ts') && name !== 'index.ts')
-    .map(async ([name, file]) => [name.split('.')[0], await readFile(file)]));
+  const files = await getFilesContent();
+  console.log(files);
 
-  return files.map(([name, fileContent]) => {
-
-    const { props, propsContent } = REG_Props.exec(fileContent)?.groups || {};
-    REG_Props.exec('');
-    const { emits, emitsContent } = REG_Emits.exec(fileContent)?.groups || {};
-    REG_Emits.exec('');
-    const { description } = REG_Desc.exec(fileContent)?.groups || {};
-    REG_Desc.exec('');
-
-    const parsedProps = parseInterface(propsContent);
-    const parsedEmits = parseInterface(emitsContent);
-    const parsedDescription = `## \`<${name}>\`  \n${description?.trim() || ''}`;
-
-    console.log(parsedDescription);
-
+  return files.map(({ name, main: { description }, props: { props, emits } }) => {
     const result: HTMLTag = { name };
 
-    if (parsedDescription) result.description = parsedDescription;
-    if (!!props && parsedProps && Object.keys(parsedProps).length)
-      result.attributes = Object.entries(parsedProps).map(([k, v]) => ({
+    if (description) result.description = description;
+    if (props && Object.keys(props).length)
+      result.attributes = Object.entries(props).map(([k, v]) => ({
         name: k,
         description: v.docs
       } satisfies HTMLTag_Attribute));
@@ -124,7 +104,37 @@ async function getComponentsDocs (): Promise<ComponentDocs[]> {
   });
 }
 
-function parseInterface (content?: string) {
+function getFilesContent (): Promise<FilesContent[]> {
+  return Promise.all(getFilePaths(path.resolve('lit', 'src', 'components'))
+    .map((file) => [file.split('\\').at(-1) || '', file] as const)
+    .filter(([name, _]) => /z-[\w\-]+(.ts)/.test(name))
+    .map(async ([name, file]) => {
+      const propsFileName = file.replace(/(.ts)$/, '.props.ts');
+
+      return {
+        name: name.split('.')[0],
+        main: await readFile(file).then((file) => {
+          const { description } =
+            /\/\*\* (?<description>.*)\*(.*[\\\*\\\/])\n@customElement/g.exec(file)?.groups || {};
+          const parsedDescription = `## \`<${name}>\`  \n${description?.trim() || ''}`;
+          return { description: parsedDescription };
+        }),
+        props: fs.existsSync(propsFileName) ? await readFile(propsFileName)
+          .then((file) => {
+            const { propsContent } =
+              /export interface Z[\w]+Props {(?<propsContent>\n(.|\n|\r|\t)*?)\n}/g.exec(file)?.groups || {};
+            const { emitsContent } =
+              /export interface Z[\w]+Emits {(?<emitsContent>\n(.|\n|\r|\t)*?)\n}/g.exec(file)?.groups || {};
+            return {
+              props: parseInterface(propsContent),
+              emits: parseInterface(emitsContent),
+            } as const;
+          }) : {},
+      };
+    }));
+}
+
+function parseInterface (content?: string): Record<string, AttrInfo> | undefined {
   let count = 0;
   return content
     ?.split(/(\n[\s]{2})/)

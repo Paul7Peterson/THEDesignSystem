@@ -4,14 +4,12 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 import SCSS from './z-card.scss?inline';
+import type { ZCardProps } from './z-card.props';
 
-export interface ZCardProps {
-
-}
 
 /** */
 @customElement('z-card')
-export class ZCard extends LitElement {
+export class ZCard extends LitElement implements ZCardProps {
 
   render () {
     return html`

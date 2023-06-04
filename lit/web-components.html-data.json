@@ -6,7 +6,7 @@
   "tags": [
     {
       "name": "z-currency",
-      "description": "## `<z-currency>`  \n",
+      "description": "## `<z-currency.ts>`  \n",
       "attributes": [
         {
           "name": "value"
@@ -21,7 +21,7 @@
     },
     {
       "name": "z-date",
-      "description": "## `<z-date>`  \n",
+      "description": "## `<z-date.ts>`  \n",
       "attributes": [
         {
           "name": "date"
@@ -36,7 +36,7 @@
     },
     {
       "name": "z-heading",
-      "description": "## `<z-heading>`  \n",
+      "description": "## `<z-heading.ts>`  \n",
       "attributes": [
         {
           "name": "text"
@@ -47,12 +47,8 @@
       ]
     },
     {
-      "name": "IconList",
-      "description": "## `<IconList>`  \n"
-    },
-    {
       "name": "z-icon",
-      "description": "## `<z-icon>`  \n...",
+      "description": "## `<z-icon.ts>`  \n...",
       "attributes": [
         {
           "name": "icon",
@@ -62,7 +58,7 @@
     },
     {
       "name": "z-image",
-      "description": "## `<z-image>`  \n",
+      "description": "## `<z-image.ts>`  \n",
       "attributes": [
         {
           "name": "src",
@@ -81,7 +77,7 @@
     },
     {
       "name": "z-number",
-      "description": "## `<z-number>`  \n",
+      "description": "## `<z-number.ts>`  \n",
       "attributes": [
         {
           "name": "value"
@@ -93,11 +89,11 @@
     },
     {
       "name": "z-spinner",
-      "description": "## `<z-spinner>`  \n"
+      "description": "## `<z-spinner.ts>`  \n"
     },
     {
       "name": "z-tooltip",
-      "description": "## `<z-tooltip>`  \n",
+      "description": "## `<z-tooltip.ts>`  \n",
       "attributes": [
         {
           "name": "tooltip"
@@ -109,15 +105,15 @@
     },
     {
       "name": "z-card",
-      "description": "## `<z-card>`  \n"
+      "description": "## `<z-card.ts>`  \n"
     },
     {
       "name": "z-modal",
-      "description": "## `<z-modal>`  \n"
+      "description": "## `<z-modal.ts>`  \n"
     },
     {
       "name": "z-button",
-      "description": "## `<z-button>`  \n",
+      "description": "## `<z-button.ts>`  \n",
       "attributes": [
         {
           "name": "text",
@@ -127,7 +123,7 @@
     },
     {
       "name": "z-checkbox",
-      "description": "## `<z-checkbox>`  \n",
+      "description": "## `<z-checkbox.ts>`  \n",
       "attributes": [
         {
           "name": "value"
@@ -139,32 +135,56 @@
     },
     {
       "name": "z-chip",
-      "description": "## `<z-chip>`  \n"
+      "description": "## `<z-chip.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text"
+        }
+      ]
     },
     {
       "name": "z-label",
-      "description": "## `<z-label>`  \nLabel"
+      "description": "## `<z-label.ts>`  \nLabel",
+      "attributes": [
+        {
+          "name": "label"
+        }
+      ]
     },
     {
       "name": "z-number-input",
-      "description": "## `<z-number-input>`  \n",
+      "description": "## `<z-number-input.ts>`  \n",
       "attributes": [
         {
-          "name": "number"
+          "name": "value",
+          "description": "..."
         }
       ]
     },
     {
       "name": "z-output",
-      "description": "## `<z-output>`  \n"
+      "description": "## `<z-output.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        }
+      ]
     },
     {
       "name": "z-select",
-      "description": "## `<z-select>`  \n"
+      "description": "## `<z-select.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "options"
+        }
+      ]
     },
     {
       "name": "z-switch",
-      "description": "## `<z-switch>`  \n",
+      "description": "## `<z-switch.ts>`  \n",
       "attributes": [
         {
           "name": "value"
@@ -176,7 +196,7 @@
     },
     {
       "name": "z-text-input",
-      "description": "## `<z-text-input>`  \n",
+      "description": "## `<z-text-input.ts>`  \n",
       "attributes": [
         {
           "name": "text",
@@ -186,7 +206,7 @@
     },
     {
       "name": "z-test-lit",
-      "description": "## `<z-test-lit>`  \n",
+      "description": "## `<z-test-lit.ts>`  \n",
       "attributes": [
         {
           "name": "text",
