@@ -8,6 +8,8 @@ import { ArrayConverter } from '~/utils/converters';
 import type { ZSelectProps } from './z-select.props';
 import { FormElement } from '../_shared/FormElement';
 
+import '../Label/z-label';
+
 /** */
 @customElement('z-select')
 export class ZSelect extends FormElement implements ZSelectProps {
@@ -18,16 +20,23 @@ export class ZSelect extends FormElement implements ZSelectProps {
 
   render () {
     return html`
-    <select .value="${this.value}">
-      ${this.options.map((option) =>
-      html`
-        <option 
-          .value="${option.value}"
-          ?disabled="${option.disabled}"
-        >
-          ${option.text}
-        </option>`)}
-    </select>`;
+    <z-label 
+      class="z-select" 
+      .label=${this.label}
+    >
+      <select 
+        .value="${this.value}"
+        slot="default"
+      >
+        ${this.options.map((option) => html`
+          <option 
+            .value="${option.value}"
+            ?disabled="${option.disabled}"
+          >
+            ${option.text}
+          </option>`)}
+      </select>
+    </z-label>`;
   }
 
   static styles = unsafeCSS(SCSS);

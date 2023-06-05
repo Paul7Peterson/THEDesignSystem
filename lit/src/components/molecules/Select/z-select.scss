@@ -1,0 +1,32 @@
+$transition: .2s;
+$inactive-color: var(--grey-80);
+
+.z-select {
+  select {
+    -moz-appearance: menulist;
+    /* Firefox */
+    -webkit-appearance: menulist;
+    /* Safari and Chrome */
+    appearance: menulist;
+    padding-top: var(--gutter-2xs);
+    padding-bottom: var(--gutter-2xs);
+
+    option {
+      background-color: inherit;
+      color: inherit;
+
+      &:disabled,
+      &[disabled],
+      &[disabled="true"] {
+        color: var(--grey-40);
+        background-color: var(--grey-80);
+      }
+
+      &:checked {
+        background-color: var(--color-ochre-80);
+        color: var(--grey-5);
+        font-weight: bold;
+      }
+    }
+  }
+}

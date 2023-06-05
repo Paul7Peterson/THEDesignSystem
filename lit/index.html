@@ -76,7 +76,7 @@
     
         <div>
           <code>z-checkbox</code>
-          <z-checkbox/>
+          <z-checkbox label="My checkbox"/>
         </div>
         
         <div>
@@ -91,17 +91,24 @@
     
         <div>
           <code>z-number-input</code>
-          <z-number-input number="0"/>
+          <z-number-input 
+            label="My number input"
+            value="0"
+          />
         </div>
     
         <div>
           <code>z-output</code>
-          <z-output value="hello"/>
+          <z-output 
+            label="My output"
+            value="hello"
+          />
         </div>
     
         <div>
           <code>z-radio</code>
           <z-radio 
+            label="My radio"
             value="2"
             options="[{ text: 'Option 1', value: '1' }, { text: 'Option 2', value: '2' }]"
           />
@@ -110,6 +117,7 @@
         <div>
           <code>z-select</code>
           <z-select
+            label="My select"
             value="2"
             options="[{ text: 'Option 1', value: '1' }, { text: 'Option 2', value: '2' }]"
           />
@@ -117,12 +125,18 @@
     
         <div>
           <code>z-switch</code>
-          <z-switch/>
+          <z-switch 
+            label="My switch"
+          />
         </div>
     
         <div>
           <code>z-text-input</code>
-          <z-text-input text="My text" id="input"/>
+          <z-text-input 
+            label="My text input"
+            value="My text" 
+            id="input"
+          />
         </div>
       </section>
   

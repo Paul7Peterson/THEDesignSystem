@@ -8,6 +8,8 @@ import { emitEvent } from '~/utils';
 import type { ZCheckboxProps } from './z-checkbox.props';
 import { FormElement } from '../_shared/FormElement';
 
+import '../Label/z-label';
+
 
 /** */
 @customElement('z-checkbox')
@@ -17,8 +19,14 @@ export class ZCheckbox extends FormElement implements ZCheckboxProps {
 
   render () {
     return html`
-    <div class="z-checkbox">
-      <div class="z-checkbox__input">
+    <z-label 
+      class="z-checkbox" 
+      .label=${this.label}
+    >
+      <div 
+        class="z-checkbox__input" 
+        slot="default"
+      >
         <input
           .id="${this.id}"
           type="checkbox"
@@ -27,7 +35,7 @@ export class ZCheckbox extends FormElement implements ZCheckboxProps {
         >
         <span class="z-checkbox__checkmark bevel" />
       </div>
-    </div>
+    </z-label>
     `;
   }
 

@@ -15,7 +15,18 @@ export class ZLabel extends LitElement implements ZLabelProps {
   label!: string;
 
   render () {
-    return html`<label>${this.label}</label>`;
+    return html`
+      <label class="z-label">
+        <span 
+          class="z-label__text"
+          style="grid-area: label"
+        >
+          ${this.label}
+        </span>
+        <div style="grid-area: input">
+          <slot name="default" />
+        </div>
+      </label>`;
   }
 
   static styles = unsafeCSS(SCSS);

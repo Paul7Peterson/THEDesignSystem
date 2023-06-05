@@ -6,21 +6,27 @@ import SCSS from './z-text-input.scss?inline';
 import type { ZTextInputProps } from './z-text-input.props';
 import { FormElement } from '../_shared/FormElement';
 
+import '../Label/z-label';
 
 /** */
 @customElement('z-text-input')
 export class ZTextInput extends FormElement implements ZTextInputProps {
-  @property({ type: String, attribute: 'text' })
+  @property()
   value!: string;
 
   render () {
     return html`
+    <z-label 
+      class="z-text-input" 
+      .label=${this.label}
+    >
       <input 
         type="text" 
+        slot="default"
         .value=${this.value}
         @input=${(e: Event) => emitEvent(this, e, 'text')} 
       />
-    `;
+    </z-label>`;
   }
 
   static styles = unsafeCSS(SCSS);
