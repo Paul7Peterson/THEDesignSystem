@@ -1,0 +1,34 @@
+@use './_colors.auto.scss' as *;
+@use 'sass:map' as map;
+@use 'sass:color' as color;
+
+@function getGrey($grey-shadow) {
+  @return map.get($greys, $grey-shadow);
+}
+
+@function getColor($color-name, $color-shadow) {
+  $color-group: map.get($colors, $color-name);
+  @return map.get($color-group, $color-shadow);
+}
+
+:root {
+
+  @each $color-name,
+  $color-group in $colors {
+
+    @each $shade,
+    $color in $color-group {
+      // --color-red-50:  hsl(350,  80%,  52%);
+      --color-#{$color-name}-#{$shade}: #{$color};
+      --color-#{$color-name}-#{$shade}-rgb: #{color.red($color)},
+      #{color.green($color)},
+      #{color.blue($color)};
+    }
+  }
+
+  @each $shade,
+  $grey in $greys {
+    // --grey-55: hsl(  0,   0%,  51%);
+    --grey-#{$shade}: #{$grey};
+  }
+}

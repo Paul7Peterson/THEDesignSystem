@@ -3,42 +3,8 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-
-const COMPONENTS = {
-  atoms: [
-    'currency',
-    'date',
-    'image',
-    'icon',
-    'number',
-    'spinner',
-    'tooltip',
-  ],
-  layouts: [
-    'card',
-    'modal',
-  ],
-  molecules: [
-    'button',
-    'checkbox',
-    'chip',
-    'label',
-    'number-input',
-    'output',
-    'select',
-    'switch',
-    'text-input',
-  ],
-} as const;
-
-function chuckParser (): Record<string, string> {
-  return Object.entries(COMPONENTS).reduce((t, [cat, elements]) => {
-    elements.forEach((element) => {
-      t[`components/${element}`] = path.resolve(__dirname, `src/components/${cat}/z-${element}.ts`);
-    });
-    return t;
-  }, {} as Record<string, string>);
-}
+import { chuckParser } from './vite.helpers';
+import svgLoader from 'vite-svg-loader';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,6 +12,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
+    svgLoader(),
   ],
   build: {
     minify: true,
@@ -67,18 +34,22 @@ export default defineConfig({
       ],
       input: {
         index: path.resolve(__dirname, 'src/index.ts'),
-        vue: path.resolve(__dirname, 'src/vue.ts'),
+        react: path.resolve(__dirname, 'src/react.ts'),
         vite: path.resolve(__dirname, 'src/vite.ts'),
-        'components/test-lit': path.resolve(__dirname, 'src/components/test-lit.ts'),
+        vue: path.resolve(__dirname, 'src/vue.ts'),
+        'z-test-lit': path.resolve(__dirname, 'src/components/z-test-lit.ts'),
         ...chuckParser(),
       },
       output: {
         // manualChunks: {
         //   vendor: ['vue'],
         // },
-        assetFileNames: (assetInfo) => {
+        assetFileNames (assetInfo) {
           if (assetInfo.name === 'main.css') return 'styles.css';
           return assetInfo.name || '';
+        },
+        chunkFileNames (fileInfo) {
+          return fileInfo.name || '';
         },
         exports: 'auto',
         // Provide global variables to use in the UMD build
@@ -90,12 +61,9 @@ export default defineConfig({
         },
       },
     },
-    commonjsOptions: {
-
-    },
   },
   server: {
-    port: 8081,
+    port: 8080,
   },
   define: {
     'process.env': process.env,
@@ -109,6 +77,7 @@ export default defineConfig({
   test: {
     globals: true,
     watch: false,
+    environment: 'jsdom',
     reporters: [
       'verbose',
       'junit',

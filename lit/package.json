@@ -8,28 +8,73 @@
     "name": "Pablo Pérez Chueca"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "style": "./dist/styles.css",
+  "style": "./dist-styles/index.css",
   "files": [
-    "dist/*"
+    "dist/*",
+    "dist-styles/*"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.es.js"
     },
+    "./index": {
+      "import": "./dist/index.es.js"
+    },
+    "./react": {
+      "import": "./dist/react.es.js"
+    },
+    "./vite": {
+      "import": "./dist/vite.es.js"
+    },
+    "./vue": {
+      "import": "./dist/vue.es.js"
+    },
     "./style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+      "import": "./dist-styles/index.css",
+      "require": "./dist-styles/index.css"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "index": [
+        "./dist/index.d.ts"
+      ],
+      "react": [
+        "./dist/react.d.ts"
+      ],
+      "vite": [
+        "./dist/vite.d.ts"
+      ],
+      "vue": [
+        "./dist/vue.d.ts"
+      ]
+    }
+  },
+  "contributes": {
+    "html": {
+      "customData": [
+        "./web-components.html-data.json"
+      ]
+    },
+    "css": {
+      "customData": [
+        "./web-components.css-data.json"
+      ]
     }
   },
   "directories": {},
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npm run build:ts && npm run build:styles",
+    "build:ts": "tsc && vite build",
+    "build:styles": "sass src/tokens/index.scss dist-styles/index.css",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest src"
   },
   "dependencies": {
     "lit": "^2.7.4"
@@ -37,12 +82,17 @@
   "devDependencies": {
     "@babel/types": "^7.21.5",
     "@types/jsdom": "^21.1.1",
-    "@types/node": "^20.2.1",
+    "@types/node": "^20.2.3",
+    "@types/react": "^18.2.7",
+    "jsdom": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.62.1",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.2",
-    "vite-plugin-dts": "^2.0.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.8",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-svg-loader": "^4.0.0",
     "vitest": "^0.31.1",
-    "vue": "^3.2.47"
+    "vue": "^3.3.4"
   }
 }

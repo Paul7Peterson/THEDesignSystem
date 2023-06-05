@@ -1,0 +1,222 @@
+{
+  "$schema": "https://unpkg.com/vscode-html-languageservice@4.2.0/docs/customData.schema.json",
+  "version": 1.1,
+  "globalAttributes": [],
+  "valueSets": [],
+  "tags": [
+    {
+      "name": "z-currency",
+      "description": "## `<z-currency.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "currency"
+        },
+        {
+          "name": "locale"
+        }
+      ]
+    },
+    {
+      "name": "z-date",
+      "description": "## `<z-date.ts>`  \n",
+      "attributes": [
+        {
+          "name": "date"
+        },
+        {
+          "name": "locale"
+        },
+        {
+          "name": "options"
+        }
+      ]
+    },
+    {
+      "name": "z-heading",
+      "description": "## `<z-heading.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text"
+        },
+        {
+          "name": "level"
+        }
+      ]
+    },
+    {
+      "name": "z-icon",
+      "description": "## `<z-icon.ts>`  \n...",
+      "attributes": [
+        {
+          "name": "icon",
+          "description": "Icon value"
+        }
+      ]
+    },
+    {
+      "name": "z-image",
+      "description": "## `<z-image.ts>`  \n",
+      "attributes": [
+        {
+          "name": "src",
+          "description": "Source of he biggest image to present"
+        },
+        {
+          "name": "alt"
+        },
+        {
+          "name": "sources"
+        },
+        {
+          "name": "ratio"
+        }
+      ]
+    },
+    {
+      "name": "z-number",
+      "description": "## `<z-number.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "locale"
+        }
+      ]
+    },
+    {
+      "name": "z-spinner",
+      "description": "## `<z-spinner.ts>`  \n"
+    },
+    {
+      "name": "z-tooltip",
+      "description": "## `<z-tooltip.ts>`  \n",
+      "attributes": [
+        {
+          "name": "tooltip"
+        },
+        {
+          "name": "noSelect"
+        }
+      ]
+    },
+    {
+      "name": "z-card",
+      "description": "## `<z-card.ts>`  \n"
+    },
+    {
+      "name": "z-modal",
+      "description": "## `<z-modal.ts>`  \n"
+    },
+    {
+      "name": "z-button",
+      "description": "## `<z-button.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text",
+          "description": "Text of the button"
+        }
+      ]
+    },
+    {
+      "name": "z-checkbox",
+      "description": "## `<z-checkbox.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "disabled"
+        }
+      ]
+    },
+    {
+      "name": "z-chip",
+      "description": "## `<z-chip.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "z-label",
+      "description": "## `<z-label.ts>`  \nLabel",
+      "attributes": [
+        {
+          "name": "label"
+        }
+      ]
+    },
+    {
+      "name": "z-number-input",
+      "description": "## `<z-number-input.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "..."
+        }
+      ]
+    },
+    {
+      "name": "z-output",
+      "description": "## `<z-output.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "name": "z-select",
+      "description": "## `<z-select.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "options"
+        }
+      ]
+    },
+    {
+      "name": "z-switch",
+      "description": "## `<z-switch.ts>`  \n",
+      "attributes": [
+        {
+          "name": "value"
+        },
+        {
+          "name": "disable"
+        }
+      ]
+    },
+    {
+      "name": "z-text-input",
+      "description": "## `<z-text-input.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text",
+          "description": "Text model"
+        }
+      ]
+    },
+    {
+      "name": "z-test-lit",
+      "description": "## `<z-test-lit.ts>`  \n",
+      "attributes": [
+        {
+          "name": "text",
+          "description": "Text input"
+        },
+        {
+          "name": "hasLogo",
+          "description": "Able logo"
+        }
+      ]
+    }
+  ]
+}

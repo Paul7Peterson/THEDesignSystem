@@ -1,0 +1,28 @@
+button.base-btn {
+  color: white;
+  background-color: #2a63bf;
+  border: 0px transparent;
+  border-radius: var(--gutter-2xs);
+  padding: var(--gutter-xs) var(--gutter-m);
+  font-size: 1rem;
+  box-shadow: var(--elevation-2);
+  transition: background 250ms ease-in-out;
+  line-height: 100%;
+  transition:
+    background-color 200ms,
+    box-shadow 200ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: var(--elevation-4);
+    background-color: color-mix(in srgb, #2a63bf, black 10%);
+  }
+
+  &:active {
+    box-shadow: var(--elevation-1);
+  }
+
+  &:focus {
+    outline: 1px solid red;
+  }
+}

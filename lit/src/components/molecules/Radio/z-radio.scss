@@ -1,0 +1,104 @@
+$transition: .2s;
+$size: 1.25rem;
+$active-color: var(--brand-orange);
+$inactive-color: var(--grey-80);
+
+.z-radio {
+  &__option {
+    align-items: center;
+    cursor: pointer;
+    color: var(--grey-5);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+      .z-radio__checkmark {
+        box-shadow: var(--die-cut-4);
+      }
+    }
+
+    &.disabled {
+      color: var(--grey-65);
+      cursor: not-allowed;
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $size;
+    width: $size;
+    background-color: $inactive-color;
+    -webkit-transition:
+      box-shadow $transition,
+      background-color $transition;
+    transition:
+      box-shadow $transition,
+      background-color $transition;
+    box-shadow: var(--die-cut-2);
+    border-radius: 50%;
+    pointer-events: none;
+
+    &::after {
+      $margin: $size * .35;
+      content: "";
+      position: absolute;
+      display: none;
+      left: $margin;
+      top: $margin;
+      bottom: $margin;
+      right: $margin;
+      border-radius: 50%;
+      background-color: var(--grey-100);
+      box-shadow: var(--elevation-2);
+    }
+  }
+
+  &__input {
+    display: block;
+    position: relative;
+    font-size: 1rem;
+    height: $size;
+    width: $size;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input[type="radio"] {
+      position: absolute;
+      margin: 0;
+      opacity: 0;
+
+      &:checked~.z-radio__checkmark {
+        background-color: $active-color;
+
+        &::after {
+          display: block;
+        }
+      }
+
+      &:focus~.z-radio__checkmark {
+        box-shadow: var(--die-cut-4);
+        outline: 1px solid var(--color-azure-65);
+        outline-offset: .1rem;
+      }
+
+      &:disabled,
+      &[disabled],
+      &[disabled="true"] {
+        ~.z-radio__checkmark {
+          box-shadow: none;
+          background-color: $inactive-color;
+        }
+
+        &:checked~.z-radio__checkmark {
+          background-color: var(--grey-35);
+        }
+      }
+    }
+  }
+}

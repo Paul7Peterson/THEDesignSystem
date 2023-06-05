@@ -1,11 +1,16 @@
-type PropTypeDict<T extends {}> = {
-  [K in keyof T]: {
-    type: import('vue').PropType<NonNullable<T[K]>>;
-    required: undefined extends T ? false : true;
-  }
-};
+import { AssertStringKeys } from './_shared.types';
 
-type AssertStringKeys<T extends {}> = keyof T extends string ? keyof T : never;
+type PropTypeDict<T extends {}> = Required<{
+  [K in keyof T]: undefined extends T[K]
+  ? {
+    type: import('vue').PropType<T[K]>;
+  }
+  : {
+    type: import('vue').PropType<T[K]>;
+    required: true;
+  }
+}>;
+
 
 type FirstLetterToUpper<T> =
   T extends `${infer First}${string}` ? Uppercase<First> : never;

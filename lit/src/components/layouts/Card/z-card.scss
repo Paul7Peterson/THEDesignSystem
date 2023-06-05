@@ -1,0 +1,7 @@
+article.z-card {
+  padding: var(--gutter-m);
+
+  &.no-padding {
+    padding: 0;
+  }
+}

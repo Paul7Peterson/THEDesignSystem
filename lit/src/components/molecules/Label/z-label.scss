@@ -1,0 +1,102 @@
+$transition: .2s;
+$inactive-color: var(--grey-40);
+$inactive-background-color: var(--grey-80);
+
+.z-label {
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  column-gap: var(--gutter-xs);
+  grid-template:
+    "label input  " max-content
+    ".     message" max-content / max-content 1fr;
+
+  // .form-message {
+  //   padding-top: var(--gutter-xs);
+  // }
+
+  &__text {
+    font-weight: bold;
+    user-select: none;
+    cursor: default;
+    min-width: 6em;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+  &[reversed="true"] {
+    grid-template:
+      "input   label" max-content
+      "message .    " max-content / max-content 1fr;
+  }
+
+  &.vertical {
+    row-gap: var(--gutter-xs);
+    grid-template:
+      "label  " max-content
+      "input  " max-content
+      "message" max-content / 1fr;
+
+    >.z-label__text {
+      align-self: flex-start;
+    }
+  }
+
+  &.disabled>.z-label__text {
+    color: var(--grey-65);
+  }
+
+  &.error {
+
+    input,
+    output,
+    select,
+    textarea {
+      outline: 2px solid var(--brand-red);
+    }
+  }
+
+  input,
+  output,
+  select,
+  textarea {
+    font-size: .85rem;
+    border: none;
+    text-align: left;
+    width: 100%;
+    box-shadow: var(--die-cut-2);
+    padding: var(--gutter-xs);
+    background-color: var(--input-backgroundColor);
+    color: var(--text-color);
+    height: calc(1em + var(--gutter-xs) * 2);
+    border-radius: var(--gutter-2xs);
+    min-width: 10rem;
+    line-height: 1em;
+    -webkit-transition:
+      box-shadow $transition,
+      background-color $transition;
+    transition:
+      box-shadow $transition,
+      background-color $transition;
+
+    &:hover,
+    &:focus {
+      box-shadow: var(--die-cut-4);
+    }
+
+    &:focus {
+      box-shadow: var(--die-cut-4);
+      outline: .1rem solid var(--color-azure-65);
+      outline-offset: .1rem;
+    }
+
+    &:disabled,
+    &[disabled],
+    &[disabled="true"] {
+      box-shadow: none;
+      color: $inactive-color;
+      background-color: $inactive-background-color;
+    }
+  }
+}

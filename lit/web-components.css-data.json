@@ -1,0 +1,57 @@
+{
+  "$schema": "https://unpkg.com/vscode-css-languageservice@5.1.9/docs/customData.schema.json",
+  "version": 1.1,
+  "properties": [
+    {
+      "name": "my-size",
+      "description": "Compiles down to `width` and `height`. See details at https://github.com/postcss/postcss-size",
+      "references": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/postcss/postcss-size"
+        }
+      ]
+    },
+    {
+      "name": "--my-accent-color",
+      "description": "Accent color of MY Design System",
+      "references": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/postcss/postcss-size"
+        }
+      ],
+      "browsers": [
+        "E12",
+        "S10",
+        "C50",
+        "IE10",
+        "O37"
+      ],
+      "status": "standard",
+      "relevance": 25
+    },
+    {
+      "name": "--my-neutral-color",
+      "description": "Neutral color of MY Design System"
+    }
+  ],
+  "pseudoClasses": [
+    {
+      "name": ":foo",
+      "description": ":any-link pseudo class. See details at https://preset-env.cssdb.org/features#any-link-pseudo-class"
+    }
+  ],
+  "atDirectives": [
+    {
+      "name": "@foo",
+      "description": "Foo at directive"
+    }
+  ],
+  "pseudoElements": [
+    {
+      "name": "::foo",
+      "description": "Foo pseudo elements"
+    }
+  ]
+}

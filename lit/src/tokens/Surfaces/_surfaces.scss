@@ -1,0 +1,32 @@
+@use "sass:string";
+@use "./_surfaces.auto.scss" as *;
+
+@function getElevation($level) {
+  @return map.get($elevations, $level);
+};
+
+@function getDieCut($level) {
+  @return map.get($die-cuts, $level);
+};
+
+:root {
+  @each $level, $value in $elevations {
+    $type: type-of($level);
+
+    @if ($type == number) {
+      --elevation-#{$level}: #{$value};
+    } @else if ($type == string and string.index($level, ".") != null) {
+      @debug "Elevation token #{level} is not allowed. Only full px are allowed for surface token.";
+    }
+  }
+
+  @each $level, $value in $die-cuts {
+    $type: type-of($level);
+
+    @if ($type == number) {
+      --die-cut-#{$level}: #{$value};
+    } @else if ($type == string and string.index($level, ".") != null) {
+      @debug "Die cut token #{level} is not allowed. Only full px are allowed for surface token.";
+    }
+  }
+}
