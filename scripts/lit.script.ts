@@ -110,13 +110,14 @@ function getFilesContent (): Promise<FilesContent[]> {
     .filter(([name, _]) => /z-[\w\-]+(.ts)/.test(name))
     .map(async ([name, file]) => {
       const propsFileName = file.replace(/(.ts)$/, '.props.ts');
+      const parsedName = name.split('.')[0];
 
       return {
-        name: name.split('.')[0],
+        name: parsedName,
         main: await readFile(file).then((file) => {
           const { description } =
             /\/\*\* (?<description>.*)\*(.*[\\\*\\\/])\n@customElement/g.exec(file)?.groups || {};
-          const parsedDescription = `## \`<${name}>\`  \n${description?.trim() || ''}`;
+          const parsedDescription = `## \`<${parsedName}>\`  \n${description?.trim() || ''}`;
           return { description: parsedDescription };
         }),
         props: fs.existsSync(propsFileName) ? await readFile(propsFileName)

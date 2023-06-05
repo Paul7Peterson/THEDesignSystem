@@ -4,6 +4,7 @@ export * from './Chip';
 export * from './Label';
 export * from './NumberInput';
 export * from './Output';
+export * from './Radio';
 export * from './Select';
 export * from './Switch';
 export * from './TextInput';

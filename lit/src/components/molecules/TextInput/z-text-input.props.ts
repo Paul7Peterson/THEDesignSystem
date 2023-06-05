@@ -1,8 +1,9 @@
+import type { FormElementProps } from '../_shared/FormElement.types';
 
 /** Text input props */
-export interface ZTextInputProps {
+export interface ZTextInputProps extends FormElementProps {
   /** Text model */
-  text: string;
+  value: string;
 }
 
 

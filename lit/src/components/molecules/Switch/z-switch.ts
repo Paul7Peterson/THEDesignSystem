@@ -1,20 +1,19 @@
 
 
-import { LitElement, html, unsafeCSS } from 'lit';
+import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-switch.scss?inline';
 import { emitEvent } from '~/utils';
 import { ZSwitchProps } from './z-switch.props';
+import { FormElement } from '../_shared/FormElement';
 
 
 /** */
 @customElement('z-switch')
-export class ZSwitch extends LitElement implements ZSwitchProps {
-  @property()
+export class ZSwitch extends FormElement implements ZSwitchProps {
+  @property({ type: Boolean })
   value!: boolean;
-  @property()
-  disable?: boolean;
 
   render () {
     return html`
@@ -23,7 +22,7 @@ export class ZSwitch extends LitElement implements ZSwitchProps {
           <input
             .id="${this.id}"
             type="checkbox"
-            ?disabled="${this.disable}"
+            ?disabled="${this.disabled}"
             @input=${(e: Event) => emitEvent(this, e, 'value')} 
           >
           <span class="z-switch__slider" />

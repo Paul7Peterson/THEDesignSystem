@@ -8,7 +8,7 @@ import type { ZButtonProps } from './z-button.props';
 /** */
 @customElement('z-button')
 export class ZButton extends LitElement implements ZButtonProps {
-  @property({ type: String, attribute: 'text' })
+  @property({ attribute: 'text' })
   text!: string;
 
   render () {
