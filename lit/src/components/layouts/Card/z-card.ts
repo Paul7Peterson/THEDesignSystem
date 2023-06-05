@@ -1,7 +1,7 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-card.scss?inline';
 import type { ZCardProps } from './z-card.props';
@@ -10,15 +10,17 @@ import type { ZCardProps } from './z-card.props';
 /** */
 @customElement('z-card')
 export class ZCard extends LitElement implements ZCardProps {
+  @property({ type: Number })
+  level: ZCardProps['level'] = 2;
 
   render () {
     return html`
-    <article
-      class="z-card"
-    >
-      <slot name="default" />
-    </article>
-    `;
+      <article
+        class="z-card"
+        .style="box-shadow: var(--elevation-${this.level});"
+      >
+        <slot name="default" />
+      </article>`;
   }
 
   static styles = unsafeCSS(SCSS);

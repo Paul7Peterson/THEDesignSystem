@@ -12,7 +12,7 @@ import type { ZDateProps } from './z-date.props';
 @customElement('z-date')
 export class ZDate extends LitElement implements ZDateProps {
 
-  @property({ converter: dateConverter, attribute: 'date', reflect: true })
+  @property({ converter: dateConverter, reflect: true })
   date!: Date;
   @property()
   locale: Required<ZDateProps['locale']> = 'en';

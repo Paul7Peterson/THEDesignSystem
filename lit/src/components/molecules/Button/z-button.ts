@@ -14,6 +14,7 @@ export class ZButton extends LitElement implements ZButtonProps {
   render () {
     return html`
       <button 
+        .id="${this.id}"
         class="base-btn"
         @click=${(e: Event) => emitEvent(this, e, 'click')} 
       >

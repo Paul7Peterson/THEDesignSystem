@@ -57,12 +57,21 @@
     
         <div>
           <code>z-card</code>
-          <z-card/>
+          <z-card>
+            <span slot="default">Card content</span>
+          </z-card>
         </div>
     
         <div>
           <code>z-modal</code>
-          <z-modal/>
+          <div>
+            <z-modal id="test-modal">
+              <span slot="default">Modal content</span>
+            </z-modal>
+
+            <button id="open-modal-button">Open modal</button>
+          </div>
+
         </div>
       </section>
       
@@ -149,8 +158,15 @@
 
     <script>
       const input = document.getElementById('input')
-      input?.addEventListener('change:text', (e) => {
+      input.addEventListener('change:text', (e) => {
         console.log(e);
+      })
+
+      document.getElementById('open-modal-button').addEventListener('click',(e) => {
+        const modal = document.getElementById('test-modal')
+        console.log({ modal });
+        modal.open()
+        // console.log();
       })
     </script>
   </body>
