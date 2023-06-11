@@ -6,7 +6,7 @@ export function eventName (attribute: string) {
 }
 
 /** */
-export function emitEvent (
+export function emitFromInput (
   ctx: LitElement,
   { target }: Event,
   eventName: string,
@@ -16,6 +16,21 @@ export function emitEvent (
 
   ctx.dispatchEvent(new CustomEvent(eventName, {
     detail: value,
+    bubbles: true,
+  }));
+}
+
+
+/** */
+export function emit (
+  ctx: LitElement,
+  payload: any,
+  eventName: string,
+) {
+  // console.log(ctx.localName, ' > ', eventName);
+
+  ctx.dispatchEvent(new CustomEvent(eventName, {
+    detail: payload,
     bubbles: true,
   }));
 }

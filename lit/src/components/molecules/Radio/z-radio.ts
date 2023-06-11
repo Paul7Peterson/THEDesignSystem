@@ -23,23 +23,25 @@ export class ZRadio extends FormElement implements ZRadioProps {
   options!: ZRadioProps['options'];
 
   render () {
+    const options = this.options.map((option) => html`
+      <div class="z-radio__input">
+        <input
+          type="radio"
+          .name="${this.name}"
+          .value="${option.value}"
+          ?disabled="${this.disabled || option.disabled}"
+          @input="onChange"
+        >
+        <span class="z-radio__checkmark" />
+      </div>`);
+
     return html`
       <z-label 
         class="z-switch" 
         .label=${this.label}
       >
         <div slot="default">
-          ${this.options.map((option) => html`
-          <div class="z-radio__input">
-            <input
-              type="radio"
-              .name="${this.name}"
-              .value="${option.value}"
-              ?disabled="${option.disabled}"
-              @input="onChange"
-            >
-            <span class="z-radio__checkmark" />
-          </div>`)}
+          ${options}
         </div>
       </z-label>`;
   }

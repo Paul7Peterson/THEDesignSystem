@@ -25,20 +25,19 @@ export class ZCurrency extends LitElement implements ZCurrencyProps {
 
   render () {
     return html`
-    <data
-      class="z-currency"
-      .value="${this.value}"
-      .content="${this.value}"
-      itemprop="price"
-    >
-      ${this.parsedValue}
-    </data>
+      <data
+        class="z-currency"
+        .value="${this.value}"
+        .content="${this.value}"
+        itemprop="price"
+      >
+        ${this.parsedValue}
+      </data>
 
-    <meta
-      itemprop="priceCurrency"
-      .content="${this.currency}"
-    >
-    `;
+      <meta
+        itemprop="priceCurrency"
+        .content="${this.currency}"
+      >`;
   }
 
   static styles = unsafeCSS(SCSS);

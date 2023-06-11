@@ -4,7 +4,7 @@ import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-number-input.scss?inline';
-import { emitEvent } from '~/utils';
+import { emitFromInput } from '~/utils';
 import type { ZNumberInputProps } from './z-number-input.props';
 import { FormElement } from '../_shared/FormElement';
 
@@ -26,7 +26,8 @@ export class ZNumberInput extends FormElement implements ZNumberInputProps {
           type="number" 
           slot="default"
           .value=${this.value}
-          @input=${(e: Event) => emitEvent(this, e, 'number')} 
+          ?disabled="${this.disabled}"
+          @input=${(e: Event) => emitFromInput(this, e, 'number')} 
         />
       </z-label>`;
   }

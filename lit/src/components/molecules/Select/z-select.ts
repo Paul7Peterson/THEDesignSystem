@@ -15,6 +15,7 @@ import '../Label/z-label';
 export class ZSelect extends FormElement implements ZSelectProps {
   @property()
   value!: ZSelectProps['value'];
+
   @property({ converter: ArrayConverter })
   options!: ZSelectProps['options'];
 
@@ -25,8 +26,9 @@ export class ZSelect extends FormElement implements ZSelectProps {
       .label=${this.label}
     >
       <select 
-        .value="${this.value}"
         slot="default"
+        .value="${this.value}"
+        ?disabled="${this.disabled}"
       >
         ${this.options.map((option) => html`
           <option 

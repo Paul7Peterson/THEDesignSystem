@@ -4,7 +4,7 @@ import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-switch.scss?inline';
-import { emitEvent } from '~/utils';
+import { emitFromInput } from '~/utils';
 import { ZSwitchProps } from './z-switch.props';
 import { FormElement } from '../_shared/FormElement';
 
@@ -30,7 +30,7 @@ export class ZSwitch extends FormElement implements ZSwitchProps {
             .id="${this.id}"
             type="checkbox"
             ?disabled="${this.disabled}"
-            @input=${(e: Event) => emitEvent(this, e, 'value')} 
+            @input=${(e: Event) => emitFromInput(this, e, 'value')} 
           >
           <span class="z-switch__slider" />
         </div>

@@ -11,7 +11,7 @@ import type { ZLabelProps } from './z-label.props';
 /** Label */
 @customElement('z-label')
 export class ZLabel extends LitElement implements ZLabelProps {
-  @property({ attribute: 'label' })
+  @property()
   label!: string;
 
   render () {

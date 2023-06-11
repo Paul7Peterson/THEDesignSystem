@@ -16,7 +16,9 @@ export class ZIcon extends LitElement implements ZIconProps {
   icon!: ZIconProps['icon'];
 
   render () {
-    return html`<i class="z-icon">${ICON[this.icon]}</i>`;
+    const icon = ICON[this.icon];
+
+    return html`<i class="z-icon">${icon}</i>`;
   }
 
   static styles = unsafeCSS(SCSS);

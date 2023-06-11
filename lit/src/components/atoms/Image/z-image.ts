@@ -9,6 +9,8 @@ import type { ZImageProps, ZImageSource } from './z-image.props';
 const FALLBACK_IMG = 'https://www.echollywell.co.uk/wp-content/uploads/blank-00cc00_040004000.png';
 
 
+type RProps = Required<ZImageProps>;
+
 /** */
 @customElement('z-image')
 export class ZImage extends LitElement implements ZImageProps {
@@ -19,12 +21,12 @@ export class ZImage extends LitElement implements ZImageProps {
   @property()
   sources: ZImageSource[] = [];
   @property()
-  ratio: Required<ZImageProps>['ratio'] = 'auto';
+  ratio: RProps['ratio'] = 'auto';
 
   render () {
     return html`
       <picture class="z-image">
-        ${this.sources.map((source) => `
+        ${this.sources.map((source) => html`
           <source
             media="(min-width:${source.minWidth}px)"
             .srcset="${source.src}"
@@ -37,8 +39,7 @@ export class ZImage extends LitElement implements ZImageProps {
           style="aspect-ratio:${this.ratio};"
           loading="lazy"
         >
-      </picture>
-    `;
+      </picture>`;
   }
 
   static styles = unsafeCSS(SCSS);

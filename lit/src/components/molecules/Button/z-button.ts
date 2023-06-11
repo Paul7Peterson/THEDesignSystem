@@ -2,21 +2,25 @@ import { LitElement, unsafeCSS, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-button.scss?inline';
-import { emitEvent } from '~/utils';
+import { emitFromInput } from '~/utils';
 import type { ZButtonProps } from './z-button.props';
 
 /** */
 @customElement('z-button')
 export class ZButton extends LitElement implements ZButtonProps {
-  @property({ attribute: 'text' })
+  @property()
   text!: string;
+
+  @property({ type: Boolean })
+  disabled?: boolean;
 
   render () {
     return html`
       <button 
         .id="${this.id}"
         class="base-btn"
-        @click=${(e: Event) => emitEvent(this, e, 'click')} 
+        ?disabled="${this.disabled}"
+        @click=${(e: Event) => emitFromInput(this, e, 'click')} 
       >
         ${this.text}
       </button>`;

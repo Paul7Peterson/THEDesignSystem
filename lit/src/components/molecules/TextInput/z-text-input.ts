@@ -1,6 +1,6 @@
 import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { emitEvent } from '~/utils';
+import { emitFromInput } from '~/utils';
 
 import SCSS from './z-text-input.scss?inline';
 import type { ZTextInputProps } from './z-text-input.props';
@@ -24,7 +24,8 @@ export class ZTextInput extends FormElement implements ZTextInputProps {
         type="text" 
         slot="default"
         .value=${this.value}
-        @input=${(e: Event) => emitEvent(this, e, 'text')} 
+        ?disabled="${this.disabled}"
+        @input=${(e: Event) => emitFromInput(this, e, 'text')} 
       />
     </z-label>`;
   }

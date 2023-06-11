@@ -10,7 +10,7 @@ import type { ZChipProps } from './z-chip.props';
 /** */
 @customElement('z-chip')
 export class ZChip extends LitElement implements ZChipProps {
-  @property({ type: String, attribute: 'text' })
+  @property()
   text?: string;
 
   render () {
