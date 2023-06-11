@@ -14,7 +14,9 @@ export class ZChip extends LitElement implements ZChipProps {
   text?: string;
 
   render () {
-    return html`<div class="z-chip">${this.text}</div>`;
+    return html`
+      ${this.text}
+    `;
   }
 
   static styles = unsafeCSS(SCSS);

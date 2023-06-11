@@ -48,19 +48,12 @@ $inactive-background-color: var(--grey-80);
   }
 
   &.error {
-
-    input,
-    output,
-    select,
-    textarea {
+    ::slotted(:is(input, output, select, textarea)) {
       outline: 2px solid var(--brand-red);
     }
   }
 
-  input,
-  output,
-  select,
-  textarea {
+  ::slotted(:is(input, output, select, textarea)) {
     font-size: .85rem;
     border: none;
     text-align: left;
@@ -79,24 +72,22 @@ $inactive-background-color: var(--grey-80);
     transition:
       box-shadow $transition,
       background-color $transition;
+  }
 
-    &:hover,
-    &:focus {
-      box-shadow: var(--die-cut-4);
-    }
+  ::slotted(:is(input, output, select, textarea):hover),
+  ::slotted(:is(input, output, select, textarea):focus) {
+    box-shadow: var(--die-cut-4);
+  }
 
-    &:focus {
-      box-shadow: var(--die-cut-4);
-      outline: .1rem solid var(--color-azure-65);
-      outline-offset: .1rem;
-    }
+  ::slotted(:is(input, output, select, textarea):focus) {
+    outline: .1rem solid var(--color-azure-65);
+    outline-offset: .1rem;
+  }
 
-    &:disabled,
-    &[disabled],
-    &[disabled="true"] {
-      box-shadow: none;
-      color: $inactive-color;
-      background-color: $inactive-background-color;
-    }
+  ::slotted(:is(input, output, select, textarea):disabled),
+  ::slotted(:is(input, output, select, textarea)[disabled]) {
+    box-shadow: none;
+    color: $inactive-color;
+    background-color: $inactive-background-color;
   }
 }

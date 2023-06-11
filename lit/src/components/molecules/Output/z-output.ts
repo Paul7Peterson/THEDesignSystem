@@ -13,6 +13,7 @@ import '../Label/z-label';
 export class ZOutput extends LitElement implements ZOutputProps {
   @property()
   value!: string;
+
   @property()
   label!: string;
 

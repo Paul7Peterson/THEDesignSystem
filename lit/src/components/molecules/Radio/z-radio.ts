@@ -13,7 +13,7 @@ import { FormElement } from '../_shared/FormElement';
 /** */
 @customElement('z-radio')
 export class ZRadio extends FormElement implements ZRadioProps {
-  @property()
+  @property({ reflect: true })
   value!: string;
 
   @property()
@@ -30,20 +30,27 @@ export class ZRadio extends FormElement implements ZRadioProps {
           .name="${this.name}"
           .value="${option.value}"
           ?disabled="${this.disabled || option.disabled}"
-          @input="onChange"
+          @input=${this.#onInput}
         >
         <span class="z-radio__checkmark" />
       </div>`);
 
     return html`
       <z-label 
-        class="z-switch" 
+        class="z-radio" 
         .label=${this.label}
       >
         <div>
           ${options}
         </div>
       </z-label>`;
+  }
+
+  #onInput (e: InputEvent): void {
+    const { value } = (e.target as HTMLInputElement);
+    this.value = value;
+
+    this.onChange();
   }
 
   static styles = unsafeCSS(SCSS);

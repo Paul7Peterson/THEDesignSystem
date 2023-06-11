@@ -13,7 +13,7 @@ import '../Label/z-label';
 /** */
 @customElement('z-select')
 export class ZSelect extends FormElement implements ZSelectProps {
-  @property()
+  @property({ reflect: true })
   value!: ZSelectProps['value'];
 
   @property({ converter: ArrayConverter })

@@ -4,7 +4,6 @@ import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import SCSS from './z-switch.scss?inline';
-import { emitFromInput } from '~/utils';
 import { ZSwitchProps } from './z-switch.props';
 import { FormElement } from '../_shared/FormElement';
 
@@ -13,7 +12,7 @@ import '../Label/z-label';
 /** */
 @customElement('z-switch')
 export class ZSwitch extends FormElement implements ZSwitchProps {
-  @property({ type: Boolean })
+  @property({ type: Boolean, reflect: true })
   value!: boolean;
 
   render () {
@@ -27,13 +26,21 @@ export class ZSwitch extends FormElement implements ZSwitchProps {
             .id="${this.id}"
             type="checkbox"
             ?disabled="${this.disabled}"
-            @input=${(e: Event) => emitFromInput(this, e, 'value')} 
+            @input=${this.#onToggle} 
           >
           <span class="z-switch__slider" />
         </div>
       </z-label>
     `;
   }
+
+  #onToggle (e: InputEvent): void {
+    const { checked } = (e.target as HTMLInputElement);
+    this.value = checked;
+
+    this.onChange();
+  }
+
 
   static styles = unsafeCSS(SCSS);
 }

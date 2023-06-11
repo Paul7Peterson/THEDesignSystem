@@ -3,7 +3,6 @@
 import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-import { emit } from '~/utils';
 import SCSS from './z-tabs.scss?inline';
 import type { ZTabsProps } from './z-tabs.props';
 import '../../molecules/Button/z-button';
@@ -60,7 +59,10 @@ export class ZTabs extends LitElement implements ZTabsProps {
     if (isDisabled) return;
 
     this.selectedIndex = index;
-    emit(this, index, 'tabChanged');
+    this.dispatchEvent(new CustomEvent('tabChanged', {
+      detail: index,
+      bubbles: true,
+    }));
   };
 
   static styles = unsafeCSS(SCSS);

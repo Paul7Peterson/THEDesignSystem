@@ -1,6 +1,5 @@
 import { html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { emitFromInput } from '~/utils';
 
 import SCSS from './z-text-input.scss?inline';
 import type { ZTextInputProps } from './z-text-input.props';
@@ -11,7 +10,7 @@ import '../Label/z-label';
 /** */
 @customElement('z-text-input')
 export class ZTextInput extends FormElement implements ZTextInputProps {
-  @property()
+  @property({ reflect: true })
   value!: string;
 
   render () {
@@ -24,9 +23,16 @@ export class ZTextInput extends FormElement implements ZTextInputProps {
         type="text"
         .value=${this.value}
         ?disabled="${this.disabled}"
-        @input=${(e: Event) => emitFromInput(this, e, 'text')} 
+        @input=${this.#onInput} 
       />
     </z-label>`;
+  }
+
+  #onInput (e: InputEvent): void {
+    const { value } = (e.target as HTMLInputElement);
+    this.value = value;
+
+    this.onChange();
   }
 
   static styles = unsafeCSS(SCSS);
