@@ -35,7 +35,7 @@ export class ZModal extends LitElement implements ZModalProps {
       >
         <!-- <form method="dialog"> -->
           <div>
-            <slot name="default"/>
+            <slot />
           </div>
 
           <div>

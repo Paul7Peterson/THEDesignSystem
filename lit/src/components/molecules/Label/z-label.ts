@@ -24,7 +24,7 @@ export class ZLabel extends LitElement implements ZLabelProps {
           ${this.label}
         </span>
         <div style="grid-area: input">
-          <slot name="default" />
+          <slot/>
         </div>
       </label>`;
   }

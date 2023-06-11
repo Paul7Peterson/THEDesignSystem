@@ -40,7 +40,7 @@ export class ZRadio extends FormElement implements ZRadioProps {
         class="z-switch" 
         .label=${this.label}
       >
-        <div slot="default">
+        <div>
           ${options}
         </div>
       </z-label>`;

@@ -25,8 +25,7 @@ export class ZSelect extends FormElement implements ZSelectProps {
       class="z-select" 
       .label=${this.label}
     >
-      <select 
-        slot="default"
+      <select
         .value="${this.value}"
         ?disabled="${this.disabled}"
       >

@@ -19,7 +19,7 @@ export class ZCard extends LitElement implements ZCardProps {
         class="z-card"
         .style="box-shadow: var(--elevation-${this.level});"
       >
-        <slot name="default" />
+        <slot />
       </article>`;
   }
 

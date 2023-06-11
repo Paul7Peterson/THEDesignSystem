@@ -21,8 +21,7 @@ export class ZTextInput extends FormElement implements ZTextInputProps {
       .label=${this.label}
     >
       <input 
-        type="text" 
-        slot="default"
+        type="text"
         .value=${this.value}
         ?disabled="${this.disabled}"
         @input=${(e: Event) => emitFromInput(this, e, 'text')} 

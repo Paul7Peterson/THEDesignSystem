@@ -23,10 +23,7 @@ export class ZCheckbox extends FormElement implements ZCheckboxProps {
       class="z-checkbox" 
       .label=${this.label}
     >
-      <div 
-        class="z-checkbox__input" 
-        slot="default"
-      >
+      <div class="z-checkbox__input">
         <input
           .id="${this.id}"
           type="checkbox"

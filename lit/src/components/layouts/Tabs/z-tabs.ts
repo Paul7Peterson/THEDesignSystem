@@ -4,7 +4,7 @@ import { LitElement, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 import { emit } from '~/utils';
-import SCSS from './z-modal.scss?inline';
+import SCSS from './z-tabs.scss?inline';
 import type { ZTabsProps } from './z-tabs.props';
 import '../../molecules/Button/z-button';
 

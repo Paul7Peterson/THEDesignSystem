@@ -22,7 +22,7 @@ export class ZTooltip extends LitElement implements ZTooltipProps {
           ${this.tooltip}
         </slot>
       </div>
-      <slot name="default" />
+      <slot />
     </div>`;
   }
 

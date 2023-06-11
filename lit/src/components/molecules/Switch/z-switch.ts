@@ -22,10 +22,7 @@ export class ZSwitch extends FormElement implements ZSwitchProps {
         class="z-switch" 
         .label=${this.label}
       >
-        <div 
-          class="z-switch__input"
-          slot="default"
-        >
+        <div class="z-switch__input">
           <input
             .id="${this.id}"
             type="checkbox"

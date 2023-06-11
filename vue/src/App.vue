@@ -24,7 +24,6 @@
     :text="text"
   >
     <img
-      slot="default"
       src="./assets/Paul.jpg"
       alt="Picture"
     >

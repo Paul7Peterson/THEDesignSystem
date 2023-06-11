@@ -24,7 +24,6 @@ export class ZNumberInput extends FormElement implements ZNumberInputProps {
       >
         <input 
           type="number" 
-          slot="default"
           .value=${this.value}
           ?disabled="${this.disabled}"
           @input=${(e: Event) => emitFromInput(this, e, 'number')} 
