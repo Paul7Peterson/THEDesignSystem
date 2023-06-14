@@ -8,8 +8,6 @@ $inactive-color: var(--grey-80);
     -webkit-appearance: menulist;
     /* Safari and Chrome */
     appearance: menulist;
-    padding-top: var(--gutter-2xs);
-    padding-bottom: var(--gutter-2xs);
 
     option {
       background-color: inherit;

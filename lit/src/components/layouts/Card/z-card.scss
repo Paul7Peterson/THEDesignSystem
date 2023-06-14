@@ -1,5 +1,6 @@
 article.z-card {
   padding: var(--gutter-m);
+  border-radius: var(--gutter-2xs);
 
   &.no-padding {
     padding: 0;

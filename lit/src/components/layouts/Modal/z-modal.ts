@@ -1,7 +1,7 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 import SCSS from './z-modal.scss?inline';
 import type { ZModalProps } from './z-modal.props';

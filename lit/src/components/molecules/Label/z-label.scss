@@ -59,7 +59,7 @@ $inactive-background-color: var(--grey-80);
     text-align: left;
     width: 100%;
     box-shadow: var(--die-cut-2);
-    padding: var(--gutter-xs);
+    padding: var(--gutter-2xs) var(--gutter-xs);
     background-color: var(--input-backgroundColor);
     color: var(--text-color);
     height: calc(1em + var(--gutter-xs) * 2);

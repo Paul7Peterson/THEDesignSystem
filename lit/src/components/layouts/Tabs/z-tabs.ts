@@ -1,33 +1,40 @@
 
 
 import { LitElement, html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 
 import SCSS from './z-tabs.scss?inline';
-import type { ZTabsProps } from './z-tabs.props';
 import '../../molecules/Button/z-button';
+
+import type { ZTabsProps } from './z-tabs.props';
+import type { ZTab } from './z-tab';
 
 /** */
 @customElement('z-tabs')
 export class ZTabs extends LitElement implements ZTabsProps {
-  @property({ type: Boolean })
-  tabs!: ZTabsProps['tabs'];
-
+  @state()
   selectedIndex: number = 0;
 
-  render () {
+  @state()
+  tabChildren: ZTab[] = [];
 
-    const tabs = this.tabs.map((tab, i) => html`
+  constructor () {
+    super();
+    this.tabChildren = Array.from(this.children)
+      .filter(({ localName }) => localName === 'z-tab') as ZTab[];
+  }
+
+  render () {
+    const tabs = this.tabChildren.map((tab, i) => html`
       <li
         .id="tab-${i + 1}"
-        class="tabs__list__item"
+        class="z-tabs__list__item"
         role="tab"
         tabIndex="0"
-        .aria-selected="${i === this.selectedIndex}"
+        ?aria-selected="${i === this.selectedIndex}"
         ?aria-disabled="${tab.disabled}"
         .aria-controls="panel-${i + 1}"
-        @click="${this.switchTab(i, tab.disabled)}"
-        @keydown.enter="${this.switchTab(i, tab.disabled)}"
+        @click=${() => this.switchTab(i, tab.disabled)}
       >
         ${tab.title}
       </li>`);
@@ -50,19 +57,25 @@ export class ZTabs extends LitElement implements ZTabsProps {
           class="z-tabs__content"
           role="tabpanel"
         >
-          <!-- <Component :is="getSlots($slots.default)[selectedIndex] || 'div'" /> -->
+         ${this.#selectedTab}
         </article>
       </div>`;
   }
 
+
+  get #selectedTab (): ZTab {
+    return this.tabChildren[this.selectedIndex];
+  }
+
   switchTab (index: number, isDisabled?: boolean) {
+    console.log('tab', index);
     if (isDisabled) return;
 
     this.selectedIndex = index;
-    this.dispatchEvent(new CustomEvent('tabChanged', {
-      detail: index,
-      bubbles: true,
-    }));
+    // this.dispatchEvent(new CustomEvent('tabChanged', {
+    //   detail: index,
+    //   bubbles: true,
+    // }));
   };
 
   static styles = unsafeCSS(SCSS);

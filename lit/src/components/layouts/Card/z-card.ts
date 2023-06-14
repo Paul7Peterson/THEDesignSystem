@@ -11,7 +11,7 @@ import type { ZCardProps } from './z-card.props';
 @customElement('z-card')
 export class ZCard extends LitElement implements ZCardProps {
   @property({ type: Number })
-  level: ZCardProps['level'] = 2;
+  level: ZCardProps['level'] = 4;
 
   render () {
     return html`
